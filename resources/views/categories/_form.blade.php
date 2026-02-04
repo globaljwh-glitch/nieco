@@ -40,7 +40,7 @@
 
     <div>
         <label>Display Order</label>
-        <input type="number" name="display_order"
+        <input type="number" name="display_order" required 
                value="{{ old('display_order', $category->display_order) }}"
                class="w-full border rounded px-3 py-2">
     </div>
