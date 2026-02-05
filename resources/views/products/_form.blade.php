@@ -32,21 +32,21 @@
 
     <div>
         <label class="block font-medium">Description</label>
-        <textarea name="description"
+        <textarea name="description" id="description-editor"
                   class="w-full border rounded px-3 py-2"
                   rows="3">{{ old('description', $product->description) }}</textarea>
     </div>
 
     <div>
         <label class="block font-medium">Packing Option</label>
-        <textarea name="packing"
+        <textarea name="packing" id="packing-editor"
                 class="w-full border rounded px-3 py-2"
                 rows="3">{{ old('packing', $product->packing) }}</textarea>
     </div>
 
     <div>
         <label class="block font-medium">Other</label>
-        <textarea name="other"
+        <textarea name="other" id="other-editor" 
                 class="w-full border rounded px-3 py-2"
                 rows="3">{{ old('other', $product->other) }}</textarea>
     </div>
@@ -243,6 +243,32 @@ function addCharacteristic() {
     `);
     characteristicIndex++;
 }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        ClassicEditor
+            .create(document.querySelector('#description-editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        ClassicEditor
+            .create(document.querySelector('#other-editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        ClassicEditor
+            .create(document.querySelector('#packing-editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    });
 </script>
 
 

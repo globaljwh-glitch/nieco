@@ -16,7 +16,7 @@
 
     <div>
         <label>Description</label>
-        <textarea name="description"
+        <textarea name="description" id="description-editor"
                   class="w-full border rounded px-3 py-2">{{ old('description', $category->description) }}</textarea>
     </div>
 
@@ -52,3 +52,13 @@
         {{ $category->exists ? 'Update' : 'Create' }}
     </button>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        ClassicEditor
+            .create(document.querySelector('#description-editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    });
+</script>
