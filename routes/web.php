@@ -7,6 +7,12 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TechnicalServiceController;
+use App\Http\Controllers\PartnershipController;
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('partnerships', PartnershipController::class)
+        ->except(['show']);
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('technical-services', TechnicalServiceController::class)
