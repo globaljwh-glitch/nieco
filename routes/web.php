@@ -8,6 +8,12 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TechnicalServiceController;
 use App\Http\Controllers\PartnershipController;
+use App\Http\Controllers\EventController;
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('events', EventController::class)
+        ->except(['show']);
+});
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('partnerships', PartnershipController::class)
