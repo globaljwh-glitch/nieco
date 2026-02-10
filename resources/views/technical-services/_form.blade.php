@@ -33,7 +33,7 @@
 
     <div>
         <label class="block font-medium">Status</label>
-        <select name="status" class="border rounded px-3 py-2">
+        <select name="status" class="w-full border rounded px-3 py-2">
             <option value="1" @selected(old('status', $service->status) == 1)>Active</option>
             <option value="0" @selected(old('status', $service->status) == 0)>Inactive</option>
         </select>

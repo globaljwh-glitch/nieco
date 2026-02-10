@@ -25,7 +25,7 @@
 
     <div>
         <label class="block font-medium">Description</label>
-        <textarea name="description"
+        <textarea name="description" id="description-editor" 
                   class="w-full border rounded px-3 py-2"
                   rows="3">{{ old('description', $event->description) }}</textarea>
     </div>
@@ -50,7 +50,7 @@
 
     <div>
         <label class="block font-medium">Status</label>
-        <select name="status" class="border rounded px-3 py-2">
+        <select name="status" class="w-full border rounded px-3 py-2">
             <option value="1" @selected(old('status', $event->status) == 1)>Active</option>
             <option value="0" @selected(old('status', $event->status) == 0)>Inactive</option>
         </select>
@@ -69,3 +69,13 @@
 <button class="mt-6 px-4 py-2 bg-indigo-600 text-white rounded">
     {{ $event->exists ? 'Update Event' : 'Create Event' }}
 </button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        ClassicEditor
+            .create(document.querySelector('#description-editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    });
+</script>
