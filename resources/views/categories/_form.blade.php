@@ -38,6 +38,20 @@
         </select>
     </div>
 
+    <div class="flex items-center gap-2">
+        <!-- Hidden input ensures 0 is sent when unchecked -->
+        <input type="hidden" name="is_featured" value="0">
+
+        <input type="checkbox"
+            name="is_featured"
+            value="1"
+            @checked(old('is_featured', $category->is_featured ?? false))
+            class="h-4 w-4">
+
+        <label class="font-medium">Featured Category</label>
+    </div>
+
+
     <div>
         <label>Display Order</label>
         <input type="number" name="display_order" required 

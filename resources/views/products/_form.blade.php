@@ -30,6 +30,18 @@
         </select>
     </div>
 
+    <div class="flex items-center gap-2">
+        <input type="hidden" name="is_featured" value="0">
+
+        <input type="checkbox"
+            name="is_featured"
+            value="1"
+            @checked(old('is_featured', $product->is_featured ?? false))
+            class="h-4 w-4">
+
+        <label class="font-medium">Featured Product</label>
+    </div>
+
     <div>
         <label class="block font-medium">Description</label>
         <textarea name="description" id="description-editor"

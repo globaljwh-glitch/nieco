@@ -12,6 +12,45 @@ use DB;
 
 class ProductController extends Controller
 {
+    /**
+     * This method is use for frontend home page - Product section
+     */
+    public function frontIndex()
+    {
+        $featured = Product::where('status', 1)
+            ->where('is_featured', 1)
+            ->orderBy('display_order', 'asc')
+            ->limit(4)
+            ->get()
+            ->map(function ($product) {
+                return [
+                    'id' => $product->id,
+                    'title' => $product->title,
+                    'image' => Storage::url($product->image),
+                ];
+            });
+
+        $latest = Product::where('status', 1)
+            ->orderBy('id', 'desc')
+            ->limit(4)
+            ->get()
+            ->map(function ($product) {
+                return [
+                    'id' => $product->id,
+                    'title' => $product->title,
+                    'image' => Storage::url($product->image),
+                ];
+            });
+
+        return response()->json([
+            'featured' => $featured,
+            'latest' => $latest,
+        ]);
+    }
+
+    /**
+     * All below methods are use for backend CRUD operations
+     */
     public function index(Request $request)
     {
         $query = Product::with('category');
@@ -48,6 +87,7 @@ class ProductController extends Controller
                 'category_id' => 'required|exists:categories,id',
                 'other' => 'nullable|string',
                 'packing' => 'nullable|string',
+                'is_featured' => 'required|boolean',
                 'external_url' => 'nullable|url',
                 'external_url_label' => 'nullable|string|max:255',
                 'image' => 'nullable|image|max:2048',
@@ -130,6 +170,7 @@ class ProductController extends Controller
                 'category_id' => 'required|exists:categories,id',
                 'other' => 'nullable|string',
                 'packing' => 'nullable|string',
+                'is_featured' => 'required|boolean',
                 'external_url' => 'nullable|url',
                 'external_url_label' => 'nullable|string|max:255',
                 'image' => 'nullable|image|max:2048',

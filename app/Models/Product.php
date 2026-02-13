@@ -18,10 +18,12 @@ class Product extends Model
         'status',
         'display_order',
         'packing',
+        'is_featured',
     ];
 
     protected $casts = [
         'status' => 'boolean',
+        'is_featured' => 'boolean',
     ];
 
     public function category()

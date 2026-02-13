@@ -8,6 +8,30 @@ use Illuminate\Support\Facades\Storage;
 
 class PartnershipController extends Controller
 {
+    /**
+     * This method is use for frontend home page - Partner's slider
+     */
+    public function frontIndex()
+    {
+        $partners = Partnership::where('status', 1)
+        ->orderBy('display_order', 'asc')
+        ->select('id', 'name', 'image', 'url')
+        ->get()
+        ->map(function ($partner) {
+            return [
+                'id' => $partner->id,
+                'name' => $partner->name,
+                'image' => Storage::url($partner->image),
+                'url' => $partner->url,
+            ];
+        });
+
+        return response()->json($partners);
+    }
+
+    /**
+     * All below methods are use for backend CRUD operations
+     */
     public function index(Request $request)
     {
         $query = Partnership::query();

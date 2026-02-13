@@ -8,6 +8,30 @@ use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
+    /**
+     * This method is use for frontend home page - Industries Served section
+     */
+    public function frontIndex()
+    {
+        $categories = Category::where('status', 1)
+        ->where('is_featured', 1)
+        ->orderBy('display_order', 'asc')
+        ->get()
+        ->map(function ($category) {
+            return [
+                'id' => $category->id,
+                'name' => $category->name,
+                'image' => Storage::url($category->image), // if stored in storage
+                'description' => $category->description,
+            ];
+        });
+
+        return response()->json($categories);
+    }
+
+    /**
+     * All below methods are use for backend CRUD operations
+     */
     public function index(Request $request)
     {
         $query = Category::query();
@@ -39,6 +63,7 @@ class CategoryController extends Controller
             'image' => 'nullable|image|max:2048',
             'thumbnail' => 'nullable|image|max:1024',
             'status' => 'required|boolean',
+            'is_featured' => 'required|boolean',
             'display_order' => 'nullable|integer|min:0',
         ]);
 
@@ -70,6 +95,7 @@ class CategoryController extends Controller
             'image' => 'nullable|image|max:2048',
             'thumbnail' => 'nullable|image|max:1024',
             'status' => 'required|boolean',
+            'is_featured' => 'required|boolean',
             'display_order' => 'nullable|integer|min:0',
         ]);
 
