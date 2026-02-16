@@ -18,10 +18,21 @@ Route::get('/front/footer', [HomeSectionController::class, 'frontFooter']);
 Route::get('/front/countries', [HomeSectionController::class, 'frontCountries']);
 Route::get('/front/industries', [HomeSectionController::class, 'frontIndustries']);
 
-// Admin
-Route::middleware(['auth'])->group(function () {
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::resource('products', ProductController::class);
+    Route::resource('categories', CategoryController::class)->except(['show']);
     Route::resource('home-sections', HomeSectionController::class)
         ->except(['show', 'destroy']);
+    Route::resource('events', EventController::class)
+        ->except(['show']);
+    Route::resource('partnerships', PartnershipController::class)
+        ->except(['show']);
+    Route::resource('technical-services', TechnicalServiceController::class)
+        ->except(['show']);
+    Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
+    Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');
+    Route::resource('settings', SettingController::class);
+
 });
 
 // Frontend API
@@ -30,52 +41,27 @@ Route::get('/partners', [PartnershipController::class, 'frontIndex']);
 Route::get('/front-categories', [CategoryController::class, 'frontIndex']);
 Route::get('/front-products', [ProductController::class, 'frontIndex']);
 
-Route::middleware(['auth'])->group(function () {
-    Route::resource('events', EventController::class)
-        ->except(['show']);
-});
-
-Route::middleware(['auth'])->group(function () {
-    Route::resource('partnerships', PartnershipController::class)
-        ->except(['show']);
-});
-
-Route::middleware(['auth'])->group(function () {
-    Route::resource('technical-services', TechnicalServiceController::class)
-        ->except(['show']);
-});
-
-Route::middleware(['auth'])->group(function () {
-    Route::resource('products', ProductController::class);
-});
-
-Route::middleware(['auth'])->group(function () {
-    Route::resource('categories', CategoryController::class)->except(['show']);
-});
-
-
-Route::middleware(['auth'])->group(function () {
-    Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
-    Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');
-});
-
-Route::middleware(['auth'])->group(function () {
-    Route::resource('settings', SettingController::class);
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 
+// Route::get('/{any}', function () {
+//     return view('home');
+// })->where('any', '.*');
+// Route::get('/{any}', function () {
+//     return view('home'); // Blade with <div id="app">
+// })->where('any', '^(?!admin).*$');
+
 Route::get('/{any}', function () {
     return view('home');
-})->where('any', '.*');
+})->where('any', '^(?!admin|login|register|password|dashboard|profile).*$');
+
 
 require __DIR__.'/auth.php';
