@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const TopBar = () => {
     return (
@@ -33,7 +35,8 @@ const TopBar = () => {
                                     className="search-submit"
                                     type="button"
                                 >
-                                    <i className="fa-solid fa-search"></i>
+                                    {/* <i className="fa-solid fa-search"></i> */}
+                                    <FontAwesomeIcon icon={faSearch} />
                                 </button>
                             </div>
                         </div>
