@@ -10,7 +10,11 @@
             <div class="bg-white shadow rounded p-6 space-y-4">
 
                 <div>
-                    <strong>Name:</strong> {{ $contact->name }}
+                    <strong>First Name:</strong> {{ $contact->name }}
+                </div>
+
+                <div>
+                    <strong>Last Name:</strong> {{ $contact->last_name }}
                 </div>
 
                 <div>
@@ -19,7 +23,12 @@
 
                 <div>
                     <strong>Phone:</strong>
-                    {{ $contact->country_code }} {{ $contact->phone }}
+                    {{ $contact->phone }}
+                </div>
+
+                <div>
+                    <strong>Company Name:</strong>
+                    {{ $contact->company_name }}
                 </div>
 
                 <div>
@@ -30,13 +39,20 @@
                 </div>
 
                 <div>
-                    <strong>Subject:</strong> {{ $contact->subject }}
+                    <strong>Application and Use of Product:</strong> {{ $contact->use_of_product }}
                 </div>
 
                 <div>
-                    <strong>Message:</strong>
+                    <strong>What products are you interested in?:</strong>
                     <p class="mt-2 whitespace-pre-line text-gray-700">
-                        {{ $contact->message }}
+                        {{ $contact->interested_in }}
+                    </p>
+                </div>
+
+                <div>
+                    <strong>Final application?:</strong>
+                    <p class="mt-2 whitespace-pre-line text-gray-700">
+                        {{ $contact->final_application }}
                     </p>
                 </div>
 

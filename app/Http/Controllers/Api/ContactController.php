@@ -1,0 +1,67 @@
+<?php
+
+namespace App\Http\Controllers\Api;
+
+use App\Http\Controllers\Controller;
+use App\Models\Contact;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
+use App\Mail\ContactThankYouMail;
+use App\Mail\ContactAdminNotificationMail;
+use Illuminate\Support\Facades\Mail;
+
+class ContactController extends Controller
+{
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'last_name' => 'nullable|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'nullable|string|max:50',
+            'company_name' => 'nullable|string|max:255',
+            'street' => 'nullable|string|max:255',
+            'city' => 'nullable|string|max:255',
+            'state' => 'nullable|string|max:255',
+            'zip_code' => 'nullable|string|max:20',
+            'country' => 'nullable|string|max:255',
+            'interested_in' => 'nullable|string',
+            'use_of_product' => 'nullable|string|max:255',
+            'final_application' => 'nullable|string',
+            'captcha' => 'required|string',
+        ]);
+
+        $response = Http::asForm()->post(
+            'https://www.google.com/recaptcha/api/siteverify',
+            [
+                'secret' => env('RECAPTCHA_SECRET_KEY'),
+                'response' => $request->captcha,
+                'remoteip' => $request->ip(),
+            ]
+        );
+
+        if (! $response->json('success')) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Captcha verification failed.'
+            ], 422);
+        }
+
+        $contact = Contact::create($data);
+
+        // Send thank you email to user
+        Mail::to($contact->email)
+            ->send(new ContactThankYouMail($contact));
+
+        // Send notification email to admin
+        Mail::to(env('ADMIN_EMAIL'))
+            ->send(new ContactAdminNotificationMail($contact));
+
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Contact submitted successfully.',
+            'data' => $contact,
+        ], 201);
+    }
+}

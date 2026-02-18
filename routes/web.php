@@ -3,14 +3,19 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SettingController;
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactController as AdminContactController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TechnicalServiceController;
 use App\Http\Controllers\PartnershipController;
 use App\Http\Controllers\HomeSectionController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\Api\ContactController;
 
+// Route::middleware('api')->prefix('api')->group(function () {
+//     Route::post('/contact-submit', [ContactController::class, 'store']);
+// });
+Route::post('/api/contact-submit', [ContactController::class, 'store']);
 Route::get('/front/banner', [HomeSectionController::class, 'frontBanner']);
 Route::get('/front/who-we-are', [HomeSectionController::class, 'frontWhoWeAre']);
 Route::get('/front/strategic', [HomeSectionController::class, 'frontStrategic']);
@@ -29,8 +34,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         ->except(['show']);
     Route::resource('technical-services', TechnicalServiceController::class)
         ->except(['show']);
-    Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
-    Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');
+    Route::get('/contacts', [AdminContactController::class, 'index'])->name('contacts.index');
+    Route::get('/contacts/{contact}', [AdminContactController::class, 'show'])->name('contacts.show');
     Route::resource('settings', SettingController::class);
 
 });

@@ -8,15 +8,18 @@ class Contact extends Model
 {
     protected $fillable = [
         'name',
+        'last_name',
         'email',
-        'country_code',
         'phone',
+        'company_name',
         'street',
         'city',
         'state',
         'zip_code',
         'country',
-        'subject',
-        'message',
+        'interested_in',
+        'use_of_product',
+        'final_application',
     ];
+
 }
