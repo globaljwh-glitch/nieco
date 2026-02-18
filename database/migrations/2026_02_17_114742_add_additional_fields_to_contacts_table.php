@@ -31,7 +31,6 @@ return new class extends Migration
                   ->after('use_of_product');
         });
     }
-
     public function down(): void
     {
         Schema::table('contacts', function (Blueprint $table) {
