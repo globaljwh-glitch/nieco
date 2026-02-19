@@ -9,6 +9,7 @@ import '../css/core.css';
 
 import Home from './pages/Home';
 import Contact from './pages/Contact';
+import CategoryPage from './pages/CategoryPage';
 
 ReactDOM.createRoot(document.getElementById("app")).render(
     <React.StrictMode>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("app")).render(
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/category/:id" element={<CategoryPage />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>

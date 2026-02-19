@@ -12,9 +12,7 @@ use App\Http\Controllers\HomeSectionController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\Api\ContactController;
 
-// Route::middleware('api')->prefix('api')->group(function () {
-//     Route::post('/contact-submit', [ContactController::class, 'store']);
-// });
+Route::get('/front/category/{id}', [CategoryController::class, 'frontShow']);
 Route::post('/api/contact-submit', [ContactController::class, 'store']);
 Route::get('/front/banner', [HomeSectionController::class, 'frontBanner']);
 Route::get('/front/who-we-are', [HomeSectionController::class, 'frontWhoWeAre']);

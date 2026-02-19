@@ -30,6 +30,81 @@
         <input type="file" name="thumbnail">
     </div>
 
+    <hr class="my-6">
+
+    <h3 class="text-lg font-semibold mb-4">Category Detail Section</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        {{-- Detail Image One --}}
+        <div>
+            <label class="block font-medium mb-1">Detail Image One</label>
+            <input type="file" name="detail_image_one" class="w-full border rounded p-2">
+
+            @if(isset($category) && $category->detail_image_one)
+                <img src="{{ asset('storage/' . $category->detail_image_one) }}"
+                    class="mt-2 h-24 rounded">
+                <div class="mt-2">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox"
+                            name="remove_detail_image_one"
+                            value="1"
+                            class="mr-2">
+                        Remove Image
+                    </label>
+                </div>
+            @endif
+        </div>
+
+        {{-- Detail Image Two --}}
+        <div>
+            <label class="block font-medium mb-1">Detail Image Two</label>
+            <input type="file" name="detail_image_two" class="w-full border rounded p-2">
+
+            @if(isset($category) && $category->detail_image_two)
+                <img src="{{ asset('storage/' . $category->detail_image_two) }}"
+                    class="mt-2 h-24 rounded">
+                <div class="mt-2">
+                    <label class="inline-flex items-center">
+                        <input type="checkbox"
+                            name="remove_detail_image_two"
+                            value="1"
+                            class="mr-2">
+                        Remove Image
+                    </label>
+                </div>
+            @endif
+        </div>
+
+    </div>
+
+    <div class="mt-6">
+        <label class="block font-medium mb-1">Detail Content</label>
+        <textarea required name="detail_content"
+                rows="6"
+                class="w-full border rounded p-2">{{ old('detail_content', $category->detail_content ?? '') }}</textarea>
+    </div>
+
+    <hr class="my-6">
+
+    <h3 class="text-lg font-semibold mb-4">Products Section</h3>
+
+    <div class="mb-4">
+        <label class="block font-medium mb-1">Products Section Title</label>
+        <input required type="text"
+            name="products_section_title"
+            value="{{ old('products_section_title', $category->products_section_title ?? '') }}"
+            class="w-full border rounded p-2">
+    </div>
+
+    <div>
+        <label class="block font-medium mb-1">Products Section Description</label>
+        <textarea required name="products_section_description"
+                rows="4"
+                class="w-full border rounded p-2">{{ old('products_section_description', $category->products_section_description ?? '') }}</textarea>
+    </div>
+
+
     <div>
         <label>Status</label>
         <select name="status" class="w-full border rounded px-3 py-2">

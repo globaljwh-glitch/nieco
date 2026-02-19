@@ -3,11 +3,35 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
+    /**
+     * Category detail page at frontend
+     */
+    public function frontShow($id)
+    {
+        $category = Category::where('id', $id)
+            ->where('status', 1)
+            ->firstOrFail();
+        $category->image = Storage::url($category->image);
+        $category->detail_image_one = Storage::url($category->detail_image_one);
+        $category->detail_image_two = Storage::url($category->detail_image_two);
+
+        $products = Product::where('category_id', $id)
+            ->where('status', 1)
+            ->orderBy('title')
+            ->get(['id', 'title']);
+
+        return response()->json([
+            'category' => $category,
+            'products' => $products,
+        ]);
+    }
+
     /**
      * This method is use for frontend home page - Industries Served section
      */
@@ -22,6 +46,7 @@ class CategoryController extends Controller
                 'id' => $category->id,
                 'name' => $category->name,
                 'image' => Storage::url($category->image), // if stored in storage
+                'thumbnail' => Storage::url($category->thumbnail),
                 'description' => $category->description,
             ];
         });
@@ -62,6 +87,11 @@ class CategoryController extends Controller
             'description' => 'nullable|string',
             'image' => 'nullable|image|max:2048',
             'thumbnail' => 'nullable|image|max:1024',
+            'detail_image_one' => 'nullable|image',
+            'detail_image_two' => 'nullable|image',
+            'detail_content' => 'nullable|string',
+            'products_section_title' => 'nullable|string',
+            'products_section_description' => 'nullable|string',
             'status' => 'required|boolean',
             'is_featured' => 'required|boolean',
             'display_order' => 'nullable|integer|min:0',
@@ -73,6 +103,29 @@ class CategoryController extends Controller
 
         if ($request->hasFile('thumbnail')) {
             $data['thumbnail'] = $request->file('thumbnail')->store('categories/thumbnails', 'public');
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Detail Image One
+        |--------------------------------------------------------------------------
+        */
+
+        // Add new image
+        if ($request->hasFile('detail_image_one')) {
+            $data['detail_image_one'] =
+                $request->file('detail_image_one')->store('categories', 'public');
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Detail Image Two
+        |--------------------------------------------------------------------------
+        */
+
+        if ($request->hasFile('detail_image_two')) {
+            $data['detail_image_two'] =
+                $request->file('detail_image_two')->store('categories', 'public');
         }
 
         Category::create($data);
@@ -94,6 +147,11 @@ class CategoryController extends Controller
             'description' => 'nullable|string',
             'image' => 'nullable|image|max:2048',
             'thumbnail' => 'nullable|image|max:1024',
+            'detail_image_one' => 'nullable|image',
+            'detail_image_two' => 'nullable|image',
+            'detail_content' => 'nullable|string',
+            'products_section_title' => 'nullable|string',
+            'products_section_description' => 'nullable|string',
             'status' => 'required|boolean',
             'is_featured' => 'required|boolean',
             'display_order' => 'nullable|integer|min:0',
@@ -111,6 +169,52 @@ class CategoryController extends Controller
                 Storage::disk('public')->delete($category->thumbnail);
             }
             $data['thumbnail'] = $request->file('thumbnail')->store('categories/thumbnails', 'public');
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Detail Image One
+        |--------------------------------------------------------------------------
+        */
+
+        // Remove image manually
+        if ($request->has('remove_detail_image_one')) {
+            if ($category->detail_image_one) {
+                Storage::disk('public')->delete($category->detail_image_one);
+            }
+            $data['detail_image_one'] = null;
+        }
+
+        // Replace image
+        if ($request->hasFile('detail_image_one')) {
+            if ($category->detail_image_one) {
+                Storage::disk('public')->delete($category->detail_image_one);
+            }
+
+            $data['detail_image_one'] =
+                $request->file('detail_image_one')->store('categories', 'public');
+        }
+
+        /*
+        |--------------------------------------------------------------------------
+        | Detail Image Two
+        |--------------------------------------------------------------------------
+        */
+
+        if ($request->has('remove_detail_image_two')) {
+            if ($category->detail_image_two) {
+                Storage::disk('public')->delete($category->detail_image_two);
+            }
+            $data['detail_image_two'] = null;
+        }
+
+        if ($request->hasFile('detail_image_two')) {
+            if ($category->detail_image_two) {
+                Storage::disk('public')->delete($category->detail_image_two);
+            }
+
+            $data['detail_image_two'] =
+                $request->file('detail_image_two')->store('categories', 'public');
         }
 
         $category->update($data);
