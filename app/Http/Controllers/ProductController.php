@@ -12,6 +12,22 @@ use DB;
 
 class ProductController extends Controller
 {
+    public function frontShow($slug)
+    {
+        $product = Product::with([
+            'information',
+            'specifications',
+            'physicalChemicalCharacteristics'
+        ])
+        ->where('slug', $slug)
+        ->where('status', 1)
+        ->firstOrFail();
+
+        $product->image = Storage::url($product->image);
+
+        return response()->json($product);
+    }
+
     /**
      * This method is use for frontend home page - Product section
      */

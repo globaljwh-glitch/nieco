@@ -51,7 +51,7 @@ const IndustriesSection = () => {
                                         className="col-lg-4 col-md-4 col-sm-6"
                                     >
                                         <div className="categoriesList">
-                                            <Link to={`/category/${category.id}`}>
+                                            <Link to={`/category/${category.slug}`}>
                                                 <img
                                                     src={category.thumbnail}
                                                     alt={category.name}

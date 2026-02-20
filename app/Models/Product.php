@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Product extends Model
 {
@@ -25,6 +26,27 @@ class Product extends Model
         'status' => 'boolean',
         'is_featured' => 'boolean',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($product) {
+            if (empty($product->slug)) {
+                $slug = \Illuminate\Support\Str::slug($product->title);
+                $originalSlug = $slug;
+                $count = 1;
+
+                while (self::where('slug', $slug)
+                    ->where('id', '!=', $product->id)
+                    ->exists()) {
+                    $slug = $originalSlug . '-' . $count++;
+                }
+
+                $product->slug = $slug;
+            }
+        });
+    }
 
     public function category()
     {

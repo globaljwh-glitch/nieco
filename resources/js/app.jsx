@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -10,6 +11,7 @@ import '../css/core.css';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import CategoryPage from './pages/CategoryPage';
+import ProductDetail from "./pages/ProductDetail";
 
 ReactDOM.createRoot(document.getElementById("app")).render(
     <React.StrictMode>
@@ -17,7 +19,8 @@ ReactDOM.createRoot(document.getElementById("app")).render(
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/category/:id" element={<CategoryPage />} />
+                <Route path="/category/:slug" element={<CategoryPage />} />
+                <Route path="/product/:slug" element={<ProductDetail />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>

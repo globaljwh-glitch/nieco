@@ -12,19 +12,29 @@ class CategoryController extends Controller
     /**
      * Category detail page at frontend
      */
-    public function frontShow($id)
+    public function frontShow($slug)
     {
-        $category = Category::where('id', $id)
+        $category = Category::where('slug', $slug)
             ->where('status', 1)
             ->firstOrFail();
-        $category->image = Storage::url($category->image);
-        $category->detail_image_one = Storage::url($category->detail_image_one);
-        $category->detail_image_two = Storage::url($category->detail_image_two);
 
-        $products = Product::where('category_id', $id)
+        // Fix image paths safely
+        if ($category->image) {
+            $category->image = Storage::url($category->image);
+        }
+
+        if ($category->detail_image_one) {
+            $category->detail_image_one = Storage::url($category->detail_image_one);
+        }
+
+        if ($category->detail_image_two) {
+            $category->detail_image_two = Storage::url($category->detail_image_two);
+        }
+
+        $products = Product::where('category_id', $category->id)
             ->where('status', 1)
-            ->orderBy('title')
-            ->get(['id', 'title']);
+            ->orderBy('display_order')
+            ->get(['id', 'title', 'slug']);
 
         return response()->json([
             'category' => $category,
@@ -45,6 +55,7 @@ class CategoryController extends Controller
             return [
                 'id' => $category->id,
                 'name' => $category->name,
+                'slug' => $category->slug,
                 'image' => Storage::url($category->image), // if stored in storage
                 'thumbnail' => Storage::url($category->thumbnail),
                 'description' => $category->description,

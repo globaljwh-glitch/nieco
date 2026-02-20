@@ -5,21 +5,22 @@ import axios from "axios";
 import TopBar from "../components/TopBar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 const CategoryPage = () => {
-    const { id } = useParams();
+    const { slug } = useParams();
 
     const [category, setCategory] = useState(null);
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        axios.get(`/front/category/${id}`)
+        axios.get(`/front/category/${slug}`)
             .then(res => {
                 setCategory(res.data.category);
                 setProducts(res.data.products);
             })
             .catch(err => console.error(err));
-    }, [id]);
+    }, [slug]);
 
     if (!category) return null;
 
@@ -102,7 +103,8 @@ const CategoryPage = () => {
                             <ul className="productListing">
                                 {products.map(product => (
                                     <li key={product.id}>
-                                        <a href="#">{product.title}</a>
+                                        {/* <a href="#">{product.title}</a> */}
+                                        <Link to={`/product/${product.slug}`}>{product.title}</Link>
                                     </li>
                                 ))}
                             </ul>
