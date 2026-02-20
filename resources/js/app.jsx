@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import CategoryPage from './pages/CategoryPage';
 import ProductDetail from "./pages/ProductDetail";
+import About from "./pages/About";
 
 ReactDOM.createRoot(document.getElementById("app")).render(
     <React.StrictMode>
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById("app")).render(
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/category/:slug" element={<CategoryPage />} />
                 <Route path="/product/:slug" element={<ProductDetail />} />
+                <Route path="/about" element={<About />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>
