@@ -1672,6 +1672,10 @@ footer a {
     padding: 24px 15px;
   }
 
+  ul.ourValues {
+    column-count: 1;
+  }
+
   .mainBanner .bannerContent h1 {
     font-size: 30px;
     line-height: 30px;
@@ -1793,4 +1797,8 @@ footer a {
     max-width: 88%;
     width: 100%;
   }
+}
+
+.organizationChart img {
+  max-width: 625px;
 }

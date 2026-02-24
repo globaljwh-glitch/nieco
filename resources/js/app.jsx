@@ -13,6 +13,14 @@ import Contact from './pages/Contact';
 import CategoryPage from './pages/CategoryPage';
 import ProductDetail from "./pages/ProductDetail";
 import About from "./pages/About";
+import CodeOfConduct from "./pages/CodeOfConduct";
+import Marketing from "./pages/Marketing";
+import OrganizationChart from "./pages/OrganizationChart";
+import Vision from "./pages/Vision";
+import DedicatedCustomerService from "./pages/DedicatedCustomerService";
+import FacilityAndLogistics from "./pages/FacilityAndLogistics";
+import Sourcing from './pages/Sourcing';
+import Strategies from './pages/Strategies';
 
 ReactDOM.createRoot(document.getElementById("app")).render(
     <React.StrictMode>
@@ -23,6 +31,14 @@ ReactDOM.createRoot(document.getElementById("app")).render(
                 <Route path="/category/:slug" element={<CategoryPage />} />
                 <Route path="/product/:slug" element={<ProductDetail />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/code-of-conduct" element={<CodeOfConduct />} />
+                <Route path="/marketing" element={<Marketing />} />
+                <Route path="/organization-chart" element={<OrganizationChart />} />
+                <Route path="/vision" element={<Vision />} />
+                <Route path="/dedicated-customer-service" element={<DedicatedCustomerService />} />
+                <Route path="/facility-and-logistics" element={<FacilityAndLogistics />} />
+                <Route path="/sourcing" element={<Sourcing />} />
+                <Route path="/strategies" element={<Strategies />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>

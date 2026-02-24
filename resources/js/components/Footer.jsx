@@ -1,88 +1,18 @@
-// const footerLinks = [
-//     "About NEICO",
-//     "Vision & Mission",
-//     "Values",
-//     "Organization Chart",
-//     "Code of Conduct",
-//     "Dedicated Customer Service",
-//     "Marketing",
-//     "Technical Services",
-//     "Sourcing",
-//     "Facilities & Logistics",
-// ];
-
-// const Footer = () => {
-//     const currentYear = new Date().getFullYear();
-
-//     return (
-//         <footer className="blueBg">
-//             <div className="container">
-//                 <div className="row">
-//                     <div className="col-lg-12">
-
-//                         {/* Top Footer Section */}
-//                         <div className="footerMenuBlock">
-//                             <div className="row">
-
-//                                 {/* Left Content */}
-//                                 <div className="col-md-6">
-//                                     <p className="footerInfo">
-//                                         Northeast Ingredients Company (NEICO) is the World’s Leading 
-//                                         Formulator, Blender, Pre-Mixer, Compounder, Processor, 
-//                                         Contract Manufacturer and Packaging Services Provider. 
-//                                         Over 4,000 ingredients blended, premixed or compounded 
-//                                         to customers’ specifications.
-//                                     </p>
-//                                 </div>
-
-//                                 {/* Right Menu */}
-//                                 <div className="col-md-6">
-//                                     <ul className="footerMenu">
-//                                         {footerLinks.map((link, index) => (
-//                                             <li key={index} className="menu-item">
-//                                                 <a href="#">{link}</a>
-//                                             </li>
-//                                         ))}
-//                                     </ul>
-//                                 </div>
-
-//                             </div>
-//                         </div>
-
-//                         {/* Copyright */}
-//                         <div className="copyright">
-//                             <div className="row">
-//                                 <div className="col-md-12">
-//                                     <p>
-//                                         &copy; Copyright © {currentYear}. 
-//                                         All Rights Reserved.
-//                                     </p>
-//                                 </div>
-//                             </div>
-//                         </div>
-
-//                     </div>
-//                 </div>
-//             </div>
-//         </footer>
-//     );
-// };
-
-// export default Footer;
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const footerLinks = [
-    "About NEICO",
-    "Vision & Mission",
-    "Values",
-    "Organization Chart",
-    "Code of Conduct",
-    "Dedicated Customer Service",
-    "Marketing",
-    "Technical Services",
-    "Sourcing",
-    "Facilities & Logistics",
+    { title: "About NEICO", path: "/about" },
+    { title: "Vision & Mission", path: "/vision" },
+    { title: "Values", path: "/strategies" },
+    { title: "Organization Chart", path: "/organization-chart" },
+    { title: "Code of Conduct", path: "/code-of-conduct" },
+    { title: "Dedicated Customer Service", path: "/dedicated-customer-service" },
+    { title: "Marketing", path: "/marketing" },
+    { title: "Technical Services", path: "/technical-services" },
+    { title: "Sourcing", path: "/sourcing" },
+    { title: "Facilities & Logistics", path: "/facility-and-logistics" },
 ];
 
 const Footer = () => {
@@ -123,7 +53,7 @@ const Footer = () => {
                                     <ul className="footerMenu">
                                         {footerLinks.map((link, index) => (
                                             <li key={index} className="menu-item">
-                                                <a href="#">{link}</a>
+                                                <Link to={ link.path }>{link.title}</Link>
                                             </li>
                                         ))}
                                     </ul>
