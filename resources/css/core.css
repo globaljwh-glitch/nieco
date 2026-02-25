@@ -609,7 +609,7 @@ h4.categoriesName {
     content: "";
     width: 30px;
     height: 30px;
-    background: url(../images/down_arrow.png) no-repeat center bottom;
+    background: url(/images/down_arrow.png) no-repeat center bottom;
     bottom: -30px;
     left: 50%;
     position: absolute;
