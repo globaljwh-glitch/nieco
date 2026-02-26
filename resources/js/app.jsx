@@ -21,6 +21,7 @@ import DedicatedCustomerService from "./pages/DedicatedCustomerService";
 import FacilityAndLogistics from "./pages/FacilityAndLogistics";
 import Sourcing from './pages/Sourcing';
 import Strategies from './pages/Strategies';
+import Partners from './pages/Partners';
 
 ReactDOM.createRoot(document.getElementById("app")).render(
     <React.StrictMode>
@@ -39,6 +40,7 @@ ReactDOM.createRoot(document.getElementById("app")).render(
                 <Route path="/facility-and-logistics" element={<FacilityAndLogistics />} />
                 <Route path="/sourcing" element={<Sourcing />} />
                 <Route path="/strategies" element={<Strategies />} />
+                <Route path="/partnerships" element={<Partners />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>
