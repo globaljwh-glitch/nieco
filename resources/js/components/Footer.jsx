@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const footerLinks = [
     { title: "About NEICO", path: "/about" },
     { title: "Vision & Mission", path: "/vision" },
-    { title: "Values", path: "/strategies" },
+    { title: "Strategies", path: "/strategies" },
     { title: "Organization Chart", path: "/organization-chart" },
     { title: "Code of Conduct", path: "/code-of-conduct" },
     { title: "Dedicated Customer Service", path: "/dedicated-customer-service" },

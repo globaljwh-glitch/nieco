@@ -10,7 +10,7 @@ const TopBar = () => {
                     <div className="d-flex align-items-center justify-content-end">
                         <ul className="topInfoList d-flex mb-0 p-0">
                             <li><a href="/careers">Careers</a></li>
-                            <li><a href="/samples">Samples</a></li>
+                            {/* <li><a href="/samples">Samples</a></li> */}
                             <li><Link to="/contact">Inquiries</Link></li>
                         </ul>
 

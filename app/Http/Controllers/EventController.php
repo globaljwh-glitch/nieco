@@ -8,6 +8,32 @@ use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
+    /**
+     * This method is use for frontend Events page (Media and Trade show)
+     */
+    public function eventPage()
+    {
+        $events = Event::where('status', 1)
+        ->orderBy('display_order', 'asc')
+        ->select('id', 'event_name', 'url', 'image', 'event_date', 'event_end_date')
+        ->get()
+        ->map(function ($events) {
+            return [
+                'id' => $events->id,
+                'event_name' => $events->event_name,
+                'image' => Storage::url($events->image),
+                'url' => $events->url,
+                'event_date' => $events->event_date,
+                'event_end_date' => $events->event_end_date,
+            ];
+        });
+
+        return response()->json($events);
+    }
+
+    /**
+     * Below are backend methods
+     */
     public function index(Request $request)
     {
         $query = Event::query();
@@ -36,7 +62,10 @@ class EventController extends Controller
         $data = $request->validate([
             'event_name' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'event_date' => 'required|date',
+            //'event_date' => 'required|date',
+            //'event_end_date' => 'required|date',
+            'event_date' => 'required|date|after_or_equal:today',
+            'event_end_date' => 'required|date|after_or_equal:event_date',
             'url' => 'nullable|url',
             'image' => 'nullable|image|max:2048',
             'thumbnail' => 'nullable|image|max:1024',
@@ -71,7 +100,10 @@ class EventController extends Controller
         $data = $request->validate([
             'event_name' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'event_date' => 'required|date',
+            //'event_date' => 'required|date',
+            //'event_end_date' => 'required|date',
+            'event_date' => 'required|date|after_or_equal:today',
+            'event_end_date' => 'required|date|after_or_equal:event_date',
             'url' => 'nullable|url',
             'image' => 'nullable|image|max:2048',
             'thumbnail' => 'nullable|image|max:1024',

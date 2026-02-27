@@ -10,6 +10,9 @@ class Event extends Model
         'event_name',
         'description',
         'event_date',
+        'event_end_date',
+        'event_start_time',
+        'event_end_time',
         'image',
         'thumbnail',
         'url',
@@ -19,6 +22,7 @@ class Event extends Model
 
     protected $casts = [
         'event_date' => 'date',
+        'event_end_date' => 'date',
         'status' => 'boolean',
     ];
 }

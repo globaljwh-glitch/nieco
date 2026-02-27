@@ -14,13 +14,42 @@
                required>
     </div>
 
-    <div>
-        <label class="block font-medium">Event Date</label>
+    <!-- <div>
+        <label class="block font-medium">Event Start Date</label>
         <input type="date"
                name="event_date"
                value="{{ old('event_date', optional($event->event_date)->format('Y-m-d')) }}"
                class="border rounded px-3 py-2"
                required>
+    </div>
+
+    <div>
+        <label class="block font-medium">Event End Date</label>
+        <input type="date"
+               name="event_end_date"
+               value="{{ old('event_end_date', optional($event->event_end_date)->format('Y-m-d')) }}"
+               class="border rounded px-3 py-2"
+               required>
+    </div> -->
+
+    <div>
+        <label class="block font-medium">Event Start Date</label>
+        <input type="date"
+            name="event_date"
+            min="{{ now()->format('Y-m-d') }}"
+            value="{{ old('event_date', optional($event->event_date)->format('Y-m-d')) }}"
+            class="border rounded px-3 py-2"
+            required>
+    </div>
+
+    <div>
+        <label class="block font-medium">Event End Date</label>
+        <input type="date"
+            name="event_end_date"
+            min="{{ now()->format('Y-m-d') }}"
+            value="{{ old('event_end_date', optional($event->event_end_date)->format('Y-m-d')) }}"
+            class="border rounded px-3 py-2"
+            required>
     </div>
 
     <div>

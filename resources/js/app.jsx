@@ -23,6 +23,7 @@ import Sourcing from './pages/Sourcing';
 import Strategies from './pages/Strategies';
 import Partners from './pages/Partners';
 import Technical from './pages/Technical';
+import Events from './pages/Events';
 
 ReactDOM.createRoot(document.getElementById("app")).render(
     <React.StrictMode>
@@ -43,6 +44,7 @@ ReactDOM.createRoot(document.getElementById("app")).render(
                 <Route path="/strategies" element={<Strategies />} />
                 <Route path="/partnerships" element={<Partners />} />
                 <Route path="/technical-services" element={<Technical />} />
+                <Route path="/media" element={<Events />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>
