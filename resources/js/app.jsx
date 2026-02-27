@@ -22,6 +22,7 @@ import FacilityAndLogistics from "./pages/FacilityAndLogistics";
 import Sourcing from './pages/Sourcing';
 import Strategies from './pages/Strategies';
 import Partners from './pages/Partners';
+import Technical from './pages/Technical';
 
 ReactDOM.createRoot(document.getElementById("app")).render(
     <React.StrictMode>
@@ -41,6 +42,7 @@ ReactDOM.createRoot(document.getElementById("app")).render(
                 <Route path="/sourcing" element={<Sourcing />} />
                 <Route path="/strategies" element={<Strategies />} />
                 <Route path="/partnerships" element={<Partners />} />
+                <Route path="/technical-services" element={<Technical />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>

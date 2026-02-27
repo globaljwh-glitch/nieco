@@ -67,21 +67,26 @@ const Navbar = () => {
 
                             {/* Services Dropdown */}
                             <li className="nav-item dropdown">
-                                <a
+                                <Link
                                     className="nav-link dropdown-toggle"
-                                    href="#"
+                                    to="#"
                                     role="button"
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
                                     Services
-                                </a>
+                                </Link>
 
                                 <ul className="dropdown-menu">
                                     <li>
-                                        <a className="dropdown-item" href="#">
+                                        <Link className="dropdown-item" to="/technical-services">
+                                            Technical Services
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="dropdown-item" to="/sourcing">
                                             Sourcing
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </li>

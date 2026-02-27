@@ -44,6 +44,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
 // Frontend API
 Route::get('/home-content', [HomeSectionController::class, 'frontIndex']);
 Route::get('/partners', [PartnershipController::class, 'frontIndex']);
+Route::get('/technical', [TechnicalServiceController::class, 'frontIndex']);
 Route::get('/front-categories', [CategoryController::class, 'frontIndex']);
 Route::get('/front-products', [ProductController::class, 'frontIndex']);
 

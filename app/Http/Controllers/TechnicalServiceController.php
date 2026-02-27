@@ -8,6 +8,30 @@ use Illuminate\Support\Facades\Storage;
 
 class TechnicalServiceController extends Controller
 {
+    /**
+     * This method is use for frontend technical services page
+     */
+    public function frontIndex()
+    {
+        $services = TechnicalService::where('status', 1)
+        ->orderBy('display_order', 'asc')
+        ->select('id', 'name', 'description', 'image')
+        ->get()
+        ->map(function ($services) {
+            return [
+                'id' => $services->id,
+                'name' => $services->name,
+                'image' => Storage::url($services->image),
+                'description' => $services->description,
+            ];
+        });
+
+        return response()->json($services);
+    }
+
+    /**
+     * Below are backend methods
+     */
     public function index()
     {
         $services = TechnicalService::orderBy('display_order')
