@@ -1,0 +1,126 @@
+import TopBar from "../components/TopBar";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+const Marketing = () => {
+  return (
+    <>
+      <TopBar />
+      <Navbar />
+
+      <section class="innerBanner p-0">
+         <div class="bannerImage">
+            <img src="images/banner/team.jpg" class="imgHeightResponsive" />
+            <div class="overlay"></div>
+         </div>
+         <div class="bannerContentOuter">
+            <div class="container">
+               <div class="bannerContent text-center m-auto">
+                  <h1>Junior Analytical Chemist & Sourcing Associate</h1>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h3>Job Description</h3>
+                  <p>NEICO is an industry leader in sourcing, processing, manufacturing, packaging and wholesale distribution of high-quality food and pharmaceutical ingredients and custom manufacturing services; Our Company specializes natural and synthetic ingredients for Food and Beverage, Cosmetic and Personal Care, Nutritional and Pharmaceutical, Commercial and Industrial Applications. Our Company also is developing Active Pharmaceutical Ingredients (APIs), Excipients including carriers, fillers, additives, preservatives and colorants to pharmaceutical manufacturers and compounding pharmacies servings human and animal health sectors of the pharmaceutical industry in the United States and the rest of the world. To meet its growth requirements of growth, the Company is now seeking experienced account executives and talented and quick-learning self-starters to enter the food and pharmaceutical industries. The job holder will work at our facility located in East Brunswick, New Jersey. Office hours are 8:00 a.m. to 5:00 p.m., Monday through Friday with 1-hour lunch time.</p>
+                  <h4>General Description</h4>
+                  <p>The Overall Duties and Responsibilities of our Company’s Analytical Chemist and Compliance Associate involve sampling, testing and analyzing chemicals and natural ingredients using U.S. Pharmacopeia (USP), National Formulary (NF), Food Chemicals Codex (FCC) and other methods approved by our Company for distribution, production and packaging and regulatory compliance with FDA, USDA, and state and local government agencies. Be the hands-on person and team lead to assist the Company's Director of Quality Assurance and Regulatory Affairs and Senior Management of a fast growing privately held business in training, guiding, leading and motivating the company’s team members with respect to productivity, workplace safety, regulatory compliance, quality assurance and production/fulfillment of customers' orders with maximum accuracy and efficiency. In this role he/she will assist the supervisor in managing the activities of production planning, engineering, production, safety, production engineering & factory flow, quality assurance, material control/inventory management, maintenance, safety and compliance. This job holder will be expected to help our company’s senior management formulate production, demand planning and sales and marketing strategies and track ongoing performance against the key performance indicators (KPIs), propose and recommend continuous improvements to the senior management and implement Lean Manufacturing/Distribution policies and practices and Six Sigma principles.</p>
+                  <p>For successful performance of the duties and responsibilities described above and hereunder, the job holder will be provided with adequate training by FDA-accredited third-party certification bodies and will obtain certificates of completion in individual names for such training for successful performance of the duties and responsibilities required of this position and the costs and expenses for such training and certifications will be fully paid for by our company.</p>
+                  <h4>Duties and Responsibilities</h4>
+                  <h5 class="text-blue">Analytical Chemistry:</h5>
+                  <ul class="listing01">
+                     <li>Conduct analysis and perform evaluation and optimization of methodology with regard to samples for assay, impurities, dissolution, content   uniformity, moisture, and other physical and chemical tests as necessary, in a timely manner, following appropriate analytical procedures.</li>
+                      <li>Follow good documentation practice and document analytical tests on lab notebooks timely and accurately.</li>
+                      <li>Follow and comply with existing SOPs and recommend improvements and updates with respect to our company’s policies and procedures on   quality  and safety assurance.</li>
+                      <li>Review and ascertain analytical data to ensure reliable and accurate analytical data generated by lab analysts.</li>
+                      <li>Perform analytical test procedures and prepare draft analytical reports for supervisor to review;</li>
+                      <li>Provide recommendations to lab supervisor / manager to improve analytical procedures, SOPs, and/or lab efficiency.</li>
+                      <li>Assist Supervisor in planning and prioritizing analytical tests accordingly so that the project timelines are met.</li>
+                      <li>Participate in and perform assigned tasks for R & D projects in custom formulation, process development, pilot scale production technologies.</li>
+                       <li>Perform other duties as assigned by our company’s management.</li>
+                  </ul>
+                  <h5 class="text-blue">Sourcing:</h5>
+                  <ul class="listing01">
+                      <li>Identifying and qualifying domestic and foreign suppliers to meet our internal production and research and development needs and our outside     customers’ requirements; building vendor relationships with manufacturers/suppliers of food additives and ingredients, pharmaceutical excipients, actives   and other allied products;</li>
+                      <li>Obtaining, gathering and organizing as much as possible product data, specifications, manuals, photographs, videos and other information of merchandise   offered to us, and if needed, travel to meet with suppliers and manufacturers;</li>
+                      <li>When applicable, arranging sampling/testing of potential materials for purchase by in house lab or qualified third-party testing and inspection companies.</li>
+                      <li>Providing assistance in purchasing merchandise from vendors, negotiating pricing, delivery and payment terms in the best interest of our company as a   customer, monitoring vendors’ performance, exercising problem solving skills;</li>
+                      <li>Identifying and providing necessary background information with respect to new vendors and once the new vendors have been approved, performing the   duties same as above</li>
+                      <li>Expediting open orders, monitoring inventory and coordinating with our warehouse personnel, account executives and customer service representatives.</li>
+                      <li>Coordinating with quality control personnel in regards to reporting and dealing with quality issues and packaging problems such as non-compliance with   our quality and packaging standards, requesting and arranging return and replacement, withholding payment and seeking credit and compensation from   vendors, demanding vendors to take corrective action, filing insurance claims if it is applicable and coordinating with insurance surveyors and claims   adjusters, coordinating and cooperating with government regulatory agencies at the direction and under the guidance of the Company’s management;</li>
+                      <li>Handling all other matters related to the supply chain issues as designated by the Company’s management from time to time.</li>
+                  </ul>
+                  <h5 class="text-blue">Personal Qualities:</h5>
+                  <ul class="listing01">
+                     <li>Integrity & Trust</li>
+                     <li>Excellent Work Ethics</li>
+                     <li>Positive Attitude and Progressive Thinking</li>
+                     <li>Ability to Learn Quickly</li>
+                     <li>Action and Performance Driven</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="greyBg">
+         <div class="">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12 text-center">
+                     <div class="paddingLR200">
+                        <h2>Apply Now.</h2>
+                        <h3>Fill out the form below to connect with a IPC.</h3>
+                     </div>
+                  </div>
+                  <div class="col-xl-9 col-lg-9 col-md-12 m-auto">
+                     <div class="formBlockOuter mt-5">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="form-group">
+                                 <label>Name <span>*</span></label>
+                                 <input type="text" name="" value="" class="form-control" placeholder="" />
+                              </div>
+                              <div class="form-group">
+                                 <label>Phone Number <span>*</span></label>
+                                 <input type="text" name="" value="" class="form-control" placeholder="" />
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="form-group">
+                                 <label>Email Address <span>*</span></label>
+                                 <input type="text" name="" value="" class="form-control" placeholder="" />
+                              </div>
+                              <div class="form-group">
+                                 <label>Subject <span>*</span></label>
+                                 <input type="text" name="" value="" class="form-control" placeholder="" />
+                              </div>
+                           </div>
+                           <div class="col-md-12">
+                              <div class="form-group">
+                                 <label>Upload Resume  <span>*</span></label>
+                                 <input type="file" name="" value="" class="form-control" placeholder="" />
+                              </div>
+                           </div>
+                           <div class="col-md-12">
+                              <div class="form-group">
+                                 <div class="text-end"><input type="submit" value="SUBMIT" class="btn btn-lg btn-block customBtn01 d-inline-block mt-2" /></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <Footer />
+    </>
+  );
+};
+
+export default Marketing;

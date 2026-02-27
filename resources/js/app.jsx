@@ -24,6 +24,8 @@ import Strategies from './pages/Strategies';
 import Partners from './pages/Partners';
 import Technical from './pages/Technical';
 import Events from './pages/Events';
+import Careers from './pages/Careers';
+import JobDetail from './pages/JobDetail';
 
 ReactDOM.createRoot(document.getElementById("app")).render(
     <React.StrictMode>
@@ -45,6 +47,8 @@ ReactDOM.createRoot(document.getElementById("app")).render(
                 <Route path="/partnerships" element={<Partners />} />
                 <Route path="/technical-services" element={<Technical />} />
                 <Route path="/media" element={<Events />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/job-detail" element={<JobDetail />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>
