@@ -11,7 +11,11 @@ use App\Http\Controllers\PartnershipController;
 use App\Http\Controllers\HomeSectionController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\Api\ContactController;
+use App\Http\Controllers\CareerController;
 
+Route::post('/jobs/{id}/apply', [CareerController::class, 'apply']);
+Route::get('/jobs/{id}', [CareerController::class, 'showApi']);
+Route::get('/jobs', [CareerController::class, 'apiIndex']);
 Route::get('/front/category/{slug}', [CategoryController::class, 'frontShow']);
 Route::get('/front/product/{slug}', [ProductController::class, 'frontShow']);
 //Route::get('/front/product/{id}', [ProductController::class, 'frontShow']);
@@ -25,6 +29,7 @@ Route::get('/front/countries', [HomeSectionController::class, 'frontCountries'])
 Route::get('/front/industries', [HomeSectionController::class, 'frontIndustries']);
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::resource('careers', CareerController::class);
     Route::resource('products', ProductController::class);
     Route::resource('categories', CategoryController::class)->except(['show']);
     Route::resource('home-sections', HomeSectionController::class)

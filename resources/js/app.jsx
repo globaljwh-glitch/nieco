@@ -48,7 +48,7 @@ ReactDOM.createRoot(document.getElementById("app")).render(
                 <Route path="/technical-services" element={<Technical />} />
                 <Route path="/media" element={<Events />} />
                 <Route path="/careers" element={<Careers />} />
-                <Route path="/job-detail" element={<JobDetail />} />
+                <Route path="/job-detail/:id" element={<JobDetail />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>

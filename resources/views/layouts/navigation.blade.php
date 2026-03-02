@@ -88,6 +88,12 @@
                             Contacts
                         </a>
 
+                        <a href="{{ route('careers.index') }}"
+                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100
+                        {{ request()->routeIs('careers.*') ? 'bg-gray-100 font-semibold' : '' }}">
+                            Careers
+                        </a>
+
                         <a href="{{ route('settings.index') }}"
                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100
                         {{ request()->routeIs('settings.*') ? 'bg-gray-100 font-semibold' : '' }}">
