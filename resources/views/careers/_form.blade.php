@@ -17,7 +17,7 @@
     <textarea name="description" id="description-editor" 
               class="w-full border rounded px-3 py-2"
               rows="5"
-              required>{{ old('description', $career->description ?? '') }}</textarea>
+              >{{ old('description', $career->description ?? '') }}</textarea>
 </div>
 
 <div class="mb-4">
