@@ -99,12 +99,12 @@
         <div id="specifications">
             @foreach(old('specifications', $product->specifications->toArray()) as $i => $spec)
                 <div class="flex gap-2 mb-2">
-                    <input name="specifications[{{ $i }}][key]"
+                    <input required name="specifications[{{ $i }}][key]"
                            value="{{ $spec['key'] ?? '' }}"
                            placeholder="Key"
                            class="border px-2 py-1">
 
-                    <input name="specifications[{{ $i }}][value]"
+                    <input required name="specifications[{{ $i }}][value]"
                            value="{{ $spec['value'] ?? '' }}"
                            placeholder="Value"
                            class="border px-2 py-1">
@@ -132,12 +132,12 @@
         <div id="information">
             @foreach(old('information', $product->information->toArray()) as $i => $info)
                 <div class="flex gap-2 mb-2">
-                    <input name="information[{{ $i }}][key]"
+                    <input required name="information[{{ $i }}][key]"
                         value="{{ $info['key'] ?? '' }}"
                         placeholder="Key"
                         class="border px-2 py-1">
 
-                    <input name="information[{{ $i }}][value]"
+                    <input required name="information[{{ $i }}][value]"
                         value="{{ $info['value'] ?? '' }}"
                         placeholder="Value"
                         class="border px-2 py-1">
@@ -166,12 +166,12 @@
         <div id="characteristics">
             @foreach(old('characteristics', $product->physicalChemicalCharacteristics->toArray()) as $i => $char)
                 <div class="flex gap-2 mb-2">
-                    <input name="characteristics[{{ $i }}][key]"
+                    <input required name="characteristics[{{ $i }}][key]"
                         value="{{ $char['key'] ?? '' }}"
                         placeholder="Key"
                         class="border px-2 py-1">
 
-                    <input name="characteristics[{{ $i }}][value]"
+                    <input required name="characteristics[{{ $i }}][value]"
                         value="{{ $char['value'] ?? '' }}"
                         placeholder="Value"
                         class="border px-2 py-1">
