@@ -218,8 +218,8 @@ let specIndex = {{ count(old('specifications', $product->specifications)) }};
 function addSpec() {
     document.getElementById('specifications').insertAdjacentHTML('beforeend', `
         <div class="flex gap-2 mb-2">
-            <input name="specifications[${specIndex}][key]" class="border px-2 py-1" placeholder="Key">
-            <input name="specifications[${specIndex}][value]" class="border px-2 py-1" placeholder="Value">
+            <input required name="specifications[${specIndex}][key]" class="border px-2 py-1" placeholder="Key">
+            <input required name="specifications[${specIndex}][value]" class="border px-2 py-1" placeholder="Value">
             <button type="button" onclick="this.parentNode.remove()" class="text-red-600">✕</button>
         </div>
     `);
@@ -233,8 +233,8 @@ let infoIndex = {{ count(old('information', $product->information)) }};
 function addInfo() {
     document.getElementById('information').insertAdjacentHTML('beforeend', `
         <div class="flex gap-2 mb-2">
-            <input name="information[${infoIndex}][key]" class="border px-2 py-1" placeholder="Key">
-            <input name="information[${infoIndex}][value]" class="border px-2 py-1" placeholder="Value">
+            <input required name="information[${infoIndex}][key]" class="border px-2 py-1" placeholder="Key">
+            <input required name="information[${infoIndex}][value]" class="border px-2 py-1" placeholder="Value">
             <button type="button" onclick="this.parentNode.remove()" class="text-red-600">✕</button>
         </div>
     `);
@@ -248,8 +248,8 @@ let characteristicIndex = {{ count(old('characteristics', $product->physicalChem
 function addCharacteristic() {
     document.getElementById('characteristics').insertAdjacentHTML('beforeend', `
         <div class="flex gap-2 mb-2">
-            <input name="characteristics[${characteristicIndex}][key]" class="border px-2 py-1" placeholder="Key">
-            <input name="characteristics[${characteristicIndex}][value]" class="border px-2 py-1" placeholder="Value">
+            <input required name="characteristics[${characteristicIndex}][key]" class="border px-2 py-1" placeholder="Key">
+            <input required name="characteristics[${characteristicIndex}][value]" class="border px-2 py-1" placeholder="Value">
             <button type="button" onclick="this.parentNode.remove()" class="text-red-600">✕</button>
         </div>
     `);

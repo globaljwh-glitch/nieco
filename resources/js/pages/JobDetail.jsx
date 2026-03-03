@@ -15,6 +15,8 @@ const JobDetail = () => {
   const [captchaToken, setCaptchaToken] = useState(null);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+    const [serverMessage, setServerMessage] = useState(null);
+    const [serverError, setServerError] = useState(null);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -73,28 +75,60 @@ const JobDetail = () => {
     data.append("resume", formData.resume);
     data.append("captcha", captchaToken);
 
+    // try {
+    //   await axios.post(`/jobs/${id}/apply`, data, {
+    //     headers: { "Content-Type": "multipart/form-data" }
+    //   });
+
+    //   alert("Application submitted successfully");
+
+    //   setFormData({
+    //     name: "",
+    //     phone: "",
+    //     email: "",
+    //     subject: "",
+    //     resume: null,
+    //   });
+
+    //   recaptchaRef.current.reset();
+    //   setCaptchaToken(null);
+    //   setErrors({});
+
+    // } catch (error) {
+    //   console.error(error);
+    //   alert("Something went wrong");
+    // }
+
     try {
-      await axios.post(`/jobs/${id}/apply`, data, {
-        headers: { "Content-Type": "multipart/form-data" }
-      });
+        const response = await axios.post(`/jobs/${id}/apply`, data, {
+            headers: { "Content-Type": "multipart/form-data" }
+        });
 
-      alert("Application submitted successfully");
+        setServerMessage(response.data.message || "Application submitted successfully");
+        setServerError(null);
 
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        subject: "",
-        resume: null,
-      });
+        setFormData({
+            name: "",
+            phone: "",
+            email: "",
+            subject: "",
+            resume: null,
+        });
 
-      recaptchaRef.current.reset();
-      setCaptchaToken(null);
-      setErrors({});
+        recaptchaRef.current.reset();
+        setCaptchaToken(null);
+        setErrors({});
 
     } catch (error) {
-      console.error(error);
-      alert("Something went wrong");
+        console.error(error);
+
+        if (error.response) {
+            setServerError(error.response.data.message || "Submission failed");
+        } else {
+            setServerError("Network error. Please try again.");
+        }
+
+        setServerMessage(null);
     }
 
     setLoading(false);
@@ -141,6 +175,17 @@ const JobDetail = () => {
                   </div>
                   <div className="col-xl-9 col-lg-9 col-md-12 m-auto">
                      <div className="formBlockOuter mt-5">
+                        {serverMessage && (
+                            <div className="alert alert-success">
+                                {serverMessage}
+                            </div>
+                        )}
+
+                        {serverError && (
+                            <div className="alert alert-danger">
+                                {serverError}
+                            </div>
+                        )}
                         <form onSubmit={handleSubmit} className="mt-4">
                         <div className="row">
                            <div className="col-md-6">
