@@ -74,7 +74,7 @@ const JobDetail = () => {
     data.append("captcha", captchaToken);
 
     try {
-      await axios.post(`/api/jobs/${id}/apply`, data, {
+      await axios.post(`/jobs/${id}/apply`, data, {
         headers: { "Content-Type": "multipart/form-data" }
       });
 
