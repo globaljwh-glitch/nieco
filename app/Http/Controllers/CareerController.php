@@ -68,7 +68,7 @@ class CareerController extends Controller
         ];
 
         // Send mail to admin
-        Mail::to(env('MAIL_ADMIN_EMAIL'))
+        Mail::to(env('ADMIN_EMAIL'))
             ->send(new JobApplicationAdminMail($data));
 
         // Send confirmation to user
