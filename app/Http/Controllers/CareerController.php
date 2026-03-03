@@ -27,16 +27,32 @@ class CareerController extends Controller
         ]);
 
         // Verify reCAPTCHA
+        // $captcha = Http::asForm()->post(
+        //     'https://www.google.com/recaptcha/api/siteverify',
+        //     [
+        //         'secret' => config('services.recaptcha.secret'),
+        //         'response' => $request->captcha,
+        //     ]
+        // );
+
+        // if (!$captcha->json('success')) {
+        //     return response()->json(['message' => 'Captcha failed'], 422);
+        // }
+
         $captcha = Http::asForm()->post(
             'https://www.google.com/recaptcha/api/siteverify',
             [
-                'secret' => config('services.recaptcha.secret'),
+                'secret' => env('RECAPTCHA_SECRET_KEY'),
                 'response' => $request->captcha,
+                'remoteip' => $request->ip(),
             ]
         );
 
-        if (!$captcha->json('success')) {
-            return response()->json(['message' => 'Captcha failed'], 422);
+        if (! $captcha->json('success')) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Captcha verification failed.'
+            ], 422);
         }
 
         // Store resume temporarily
