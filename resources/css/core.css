@@ -1802,3 +1802,23 @@ footer a {
 .organizationChart img {
   max-width: 625px;
 }
+
+.searchDropdown {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    border: 1px solid #ddd;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 999;
+}
+
+.searchDropdown li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.searchDropdown li:hover {
+    background: #f5f5f5;
+}

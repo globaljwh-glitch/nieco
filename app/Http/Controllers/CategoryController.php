@@ -9,6 +9,14 @@ use Illuminate\Support\Facades\Storage;
 
 class CategoryController extends Controller
 {
+    public function menuList()
+    {
+        $categories = Category::where('status', 1)
+            ->orderBy('name')
+            ->get(['id','name','slug']);
+
+        return response()->json($categories);
+    }
     /**
      * Category detail page at frontend
      */

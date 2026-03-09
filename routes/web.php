@@ -13,6 +13,8 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\CareerController;
 
+Route::get('/categories', [CategoryController::class, 'menuList']);
+Route::get('/search-products', [ProductController::class, 'search']);
 Route::post('/jobs/{id}/apply', [CareerController::class, 'apply']);
 Route::get('/jobs/{id}', [CareerController::class, 'showApi']);
 Route::get('/jobs', [CareerController::class, 'apiIndex']);

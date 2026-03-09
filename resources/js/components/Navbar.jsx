@@ -1,6 +1,20 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Navbar = () => {
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        axios.get('/categories')
+            .then(response => {
+                setCategories(response.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, []);
+
     return (
         <header>
             <nav className="navbar navbar-expand-lg">
@@ -54,7 +68,7 @@ const Navbar = () => {
                                     Ingredients
                                 </a>
 
-                                <ul className="dropdown-menu">
+                                {/* <ul className="dropdown-menu">
                                     <li><a className="dropdown-item" href="#">Agricultural</a></li>
                                     <li><a className="dropdown-item" href="#">Animal Nutrition &amp; Feed</a></li>
                                     <li><a className="dropdown-item" href="#">Cosmetics, Fragrance &amp; Personal Care</a></li>
@@ -62,6 +76,18 @@ const Navbar = () => {
                                     <li><a className="dropdown-item" href="#">Electronic</a></li>
                                     <li><a className="dropdown-item" href="#">Food &amp; Beverage</a></li>
                                     <li><a className="dropdown-item" href="#">Pharmaceutical &amp; Fine Ingredients</a></li>
+                                </ul> */}
+                                <ul className="dropdown-menu">
+                                    {categories.map((cat) => (
+                                        <li key={cat.id}>
+                                            <a
+                                                className="dropdown-item"
+                                                href={`/category/${cat.slug}`}
+                                            >
+                                                {cat.name}
+                                            </a>
+                                        </li>
+                                    ))}
                                 </ul>
                             </li>
 

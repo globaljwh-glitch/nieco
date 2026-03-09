@@ -12,6 +12,21 @@ use DB;
 
 class ProductController extends Controller
 {
+    /**
+     * Top bar search
+     */
+    public function search(Request $request)
+    {
+        $query = $request->q;
+
+        $products = Product::where('title', 'like', "%{$query}%")
+            ->where('status', 1)
+            ->limit(10)
+            ->get(['id', 'title', 'slug']);
+
+        return response()->json($products);
+    }
+
     public function frontShow($slug)
     {
         $product = Product::with([
