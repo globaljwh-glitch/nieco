@@ -7,6 +7,20 @@ const ProductSection = () => {
     const [featured, setFeatured] = useState([]);
     const [latest, setLatest] = useState([]);
     const [strategic, setStrategic] = useState(null);
+    const randomImages = [
+        "/images/products/bakery-desserts-01.jpg",
+        "/images/products/bakery-desserts-02.jpg",
+        "/images/products/beverage-02.jpg",
+        "/images/products/beverage-03.jpg",
+        "/images/products/fresh-vegetable-01.jpg",
+        "/images/products/pickle-01.jpg",
+        "/images/products/snack-01.jpg",
+        "/images/products/spices-01.jpg",
+    ];
+
+    const getRandomImage = (id) => {
+        return randomImages[id % randomImages.length];
+    };
 
     useEffect(() => {
         // Fetch Products
@@ -52,7 +66,7 @@ const ProductSection = () => {
                                 {featured.map(product => (
                                     <ProductItem
                                         key={product.id}
-                                        image={product.image}
+                                        image={getRandomImage(product.id)}
                                         name={product.title}
                                     />
                                 ))}
@@ -66,7 +80,7 @@ const ProductSection = () => {
                                 {latest.map(product => (
                                     <ProductItem
                                         key={product.id}
-                                        image={product.image}
+                                        image={getRandomImage(product.id)}
                                         name={product.title}
                                     />
                                 ))}
