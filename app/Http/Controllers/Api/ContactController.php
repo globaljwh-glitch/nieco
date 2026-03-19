@@ -12,6 +12,32 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
+    /**
+     * Create mail test function
+     */
+    public function testEmail(Request $request) {
+        $to = "ramankant.vashisht@jwhglobal.com"; // change this
+        $subject = "Test Mail";
+        $message = "If you see this, mail() is working.";
+        $headers = "From: ramankant.vashisht@jwhglobal.com\r\n";
+        $headers .= "Reply-To: ramankant.vashisht@jwhglobal.com\r\n";
+        $headers .= "X-Mailer: PHP/" . phpversion();
+
+        if (mail($to, $subject, $message, $headers)) {
+            //echo "Mail sent successfully";
+            return response()->json([
+                'success' => true,
+                'message' => 'Mail sent successfully.'
+            ], 200);
+        } else {
+            //echo "Mail failed";
+            return response()->json([
+                'success' => true,
+                'message' => 'Mail failed.'
+            ], 200);
+        }
+    }
+
     public function store(Request $request)
     {
         $data = $request->validate([
