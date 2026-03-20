@@ -9,13 +9,13 @@ const facilities = [
         title: "Cutting Edge Technologies",
         image: "/images/facilities-thumb-02.jpg",
         position: "left",
-        description: `Our R & D and Business Development Teams possess highly proficient technical expertise and market insights that our clients seek in an effort to expand and create greater value in their product lines and introduce cutting edge technologies to the marketplace. At NEICO, we strive to develop synergistic partnerships with our clients in order to improve and strengthen their competitive advantage, demand planning, order fulfillment and customer satisfaction in all markets where we operate.`
+        description: `Our R & D and Business Development Teams possess highly proficient technical expertise and market insights that our clients seek in an effort to expand and create greater values in their product lines and introduce cutting edge technologies to the marketplace. At NEICO, we strive to develop a synergistic partnerships with our clients in order to improve and strengthen their competitive advantage, demand planning, orders fulfillment and customer satisfaction in all markets where we have operate or have a presence. At NEICO, our core competency is to provide solutions to our existing and new customers by leveraging our global sourcing expertise and extensive portfolio of products and services in North America and all other countries and regions where we operate.`
     },
     {
         title: "Customer Focused",
         image: "/images/facilities-thumb-03.jpg",
         position: "right",
-        description: `Customer focus means meeting customers’ needs and expectations throughout the life cycle of product design, sales and marketing, quality control, manufacturing, logistics, customer support, after-sales services, billing and collection. NEICO embraces a hands-on approach in providing accurate, timely and reliable service to all clients.`
+        description: `Customer focus means meeting customers’ needs and expectations throughout the life cycle of product design, sales and marketing, quality control, manufacturing, logistics, customer support, after-sales services, billing and collection. NEICO’s core foundation was created with the customer as the primary focus. We embrace a “Hands-On” approach in providing accurate, timely and reliable service to all our clients. Our customer service team members serve as advocates and strategic partners to our customers as well. They are stakeholders who are responsible for ensuring that each and every order is handled with professionalism and precision, so our customers will happily pay for our products and services with no buyer’s remorse.`
     }
 ];
 

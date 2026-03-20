@@ -44,7 +44,7 @@
 
 <div class="mb-4">
     <label class="block mb-1">Content</label>
-    <textarea name="content"
+    <textarea name="content" id="description-editor"
               rows="5"
               class="w-full border rounded px-3 py-2">{{ old('content', $homeSection->content ?? '') }}</textarea>
 </div>
@@ -114,3 +114,13 @@
         Save
     </button>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        ClassicEditor
+            .create(document.querySelector('#description-editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    });
+</script>
