@@ -50,7 +50,7 @@ const ProductSection = () => {
                         <StrategicSection />
                         <hr
                             className="underLineRed"
-                            style={{ width: "340px", marginTop: "80px" }}
+                            style={{ width: "340px" }}
                         />
                     </>
                 )}
