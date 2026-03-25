@@ -52,8 +52,39 @@ const Navbar = () => {
                                 <Link className="nav-link" to="/">Home</Link>
                             </li>
 
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link className="nav-link" to="/about">About</Link>
+                            </li> */}
+                            <li className="nav-item dropdown">
+                                <Link
+                                    className="nav-link dropdown-toggle"
+                                    to="/about"
+                                >
+                                    About
+                                </Link>
+
+                                <ul className="dropdown-menu">
+                                    <li>
+                                        <Link className="dropdown-item" to="/vision">
+                                            Vision & Mission
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="dropdown-item" to="/strategies">
+                                            Strategies
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="dropdown-item" to="/organization-chart">
+                                            Organization Chart
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="dropdown-item" to="/code-of-conduct">
+                                            Code of Conduct
+                                        </Link>
+                                    </li>
+                                </ul>
                             </li>
 
                             {/* Ingredients Dropdown */}
@@ -65,7 +96,7 @@ const Navbar = () => {
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
-                                    Ingredients
+                                    Industries Served
                                 </a>
 
                                 {/* <ul className="dropdown-menu">
@@ -92,26 +123,68 @@ const Navbar = () => {
                             </li>
 
                             {/* Services Dropdown */}
-                            <li className="nav-item dropdown">
+                            {/* <li className="nav-item dropdown">
                                 <Link
                                     className="nav-link dropdown-toggle"
-                                    to="#"
+                                    to="/technical-services"
                                     role="button"
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
-                                    Services
+                                    Technical Services
                                 </Link>
 
                                 <ul className="dropdown-menu">
                                     <li>
-                                        <Link className="dropdown-item" to="/technical-services">
-                                            Technical Services
+                                        <Link className="dropdown-item" to="/dedicated-customer-service">
+                                            Dedicated Customer Service
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="dropdown-item" to="/marketing">
+                                            Marketing
                                         </Link>
                                     </li>
                                     <li>
                                         <Link className="dropdown-item" to="/sourcing">
                                             Sourcing
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="dropdown-item" to="/facility-and-logistics">
+                                            Facilities & Logistics
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </li> */}
+
+                            <li className="nav-item dropdown">
+                                <Link
+                                    className="nav-link dropdown-toggle"
+                                    to="/technical-services"
+                                >
+                                    Technical Services
+                                </Link>
+
+                                <ul className="dropdown-menu">
+                                    <li>
+                                        <Link className="dropdown-item" to="/dedicated-customer-service">
+                                            Dedicated Customer Service
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="dropdown-item" to="/marketing">
+                                            Marketing
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="dropdown-item" to="/sourcing">
+                                            Sourcing
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="dropdown-item" to="/facility-and-logistics">
+                                            Facilities & Logistics
                                         </Link>
                                     </li>
                                 </ul>
@@ -125,7 +198,7 @@ const Navbar = () => {
 
                             <li className="nav-item">
                                 <Link className="nav-link" to="/partnerships">
-                                    Partners
+                                    Partnerships
                                 </Link>
                             </li>
 

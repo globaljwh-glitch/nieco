@@ -39,17 +39,17 @@ const About = () => {
               <p>
                 NEICO is America’s leading custom blender, pre-mixer and provider of various contract manufacturing/processing and packaging services. We excel in providing the services of dry mixing and liquid compounding of a wide range of high-quality ingredients for customers in the Agricultural, Cosmetics, Fragrance & Personal Care, Food & Beverage, Household & Commercial Cleaning, Industrial Ingredients, Oil & Gas and Pharmaceutical & Fine Ingredients industries; in addition, we have expertise in combinatorial chemistry, controlled reactions, extraction, purification, crystalizing, drying and packaging. NEICO is a reputable specialty ingredients company with its global headquarters in the United States. We add value to our products and services through our global capabilities in sourcing, marketing, sales, technical services, transportation, warehousing and distribution backed by our supply chain partners worldwide.
               </p>
-              <hr className="underLineRed mt-5" />
+              {/* <hr className="underLineRed mt-5" /> */}
             </div>
           </div>
         </div>
       </section>
 
         {/* Industries */}
-        <IndustriesSection />
+        {/* <IndustriesSection /> */}
 
       {/* Partners */}
-      <section>
+      {/* <section>
         <div className="container text-center">
           <h2>Our Partners</h2>
           <p className="paddingLR150">
@@ -60,17 +60,17 @@ const About = () => {
                 <PartnerSlider />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Strategically Located */}
-      <section className="greyBg blockOverImage">
+      {/* <section className="greyBg blockOverImage">
         <div className="container">
             <StrategicSection />
         </div>
-      </section>
+      </section> */}
 
         {/* Countries */}
-        <CountriesSection />
+        {/* <CountriesSection /> */}
       <Footer />
     </>
   );
