@@ -107,7 +107,7 @@ strong {
 }
 
 .parallax-01 {
-    background-image: url(./images/240.jpg);
+    background-image: url(/images/240.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -115,7 +115,7 @@ strong {
 }
 
 .parallax-02 {
-    background-image: url(./images/672.jpg);
+    background-image: url(/images/672.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -123,7 +123,7 @@ strong {
 }
 
 .parallax-03 {
-    background-image: url(./images/1317.jpg);
+    background-image: url(/images/1317.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -651,7 +651,7 @@ h4.categoriesName {
     content: "";
     width: 30px;
     height: 30px;
-    background: url(./images/down_arrow.png) no-repeat center bottom;
+    background: url(/images/down_arrow.png) no-repeat center bottom;
     bottom: -30px;
     left: 50%;
     position: absolute;
@@ -1051,12 +1051,12 @@ footer a {
 
 .slick-prev {
   left: 14px;
-  background: url('./images/arrow-prev.png');
+  background: url('/images/arrow-prev.png');
 }
 
 .slick-next {
   right: 14px;
-  background: url('./images/arrow-next.png');
+  background: url('/images/arrow-next.png');
 }
 
 .slick-prev,
