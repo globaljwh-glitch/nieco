@@ -2,11 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import $ from 'jquery';
+window.$ = $;
+window.jQuery = $;
+
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../css/core.css';
+
+import './core.js';
 
 import Home from './pages/Home';
 import Contact from './pages/Contact';

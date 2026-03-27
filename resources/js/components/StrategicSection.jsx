@@ -38,7 +38,7 @@ const StrategicSection = () => {
                     </div>
                 </div>
 
-                <section className="industries greyBg">
+                {/* <section className="industries greyBg">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12 text-center">
@@ -54,7 +54,7 @@ const StrategicSection = () => {
                             </div>
                         </div>
                     </div>
-                </section>
+                </section> */}
             </>
         )}
         </>

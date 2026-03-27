@@ -41,6 +41,7 @@ const ProductSection = () => {
     }, []);
 
     return (
+        <>
         <section className="greyBg blockOverImage">
             <div className="container">
 
@@ -48,10 +49,7 @@ const ProductSection = () => {
                 {strategic && (
                     <>
                         <StrategicSection />
-                        <hr
-                            className="underLineRed"
-                            style={{ width: "340px" }}
-                        />
+                        <hr className="underLineRed" style={{ width: "340px", marginTop: "80px" }} />
                     </>
                 )}
 
@@ -92,6 +90,8 @@ const ProductSection = () => {
 
             </div>
         </section>
+        <section class="parallax-02"></section>
+        </>
     );
 };
 

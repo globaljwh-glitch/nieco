@@ -35,7 +35,7 @@ const PartnerSlider = () => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-lg-12">
-
+                        <div class="ourPartnerBlockSlider">
                         <Slider {...settings}>
                             {partners.map(partner => (
                                 <div key={partner.id} className="ourPartnerBlockSlide">
@@ -59,7 +59,7 @@ const PartnerSlider = () => {
                                 </div>
                             ))}
                         </Slider>
-
+                        </div>
                     </div>
                 </div>
             </div>

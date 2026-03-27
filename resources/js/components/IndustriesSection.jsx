@@ -24,6 +24,7 @@ const IndustriesSection = () => {
     if (!categories.length || !sectionData) return null;
 
     return (
+        <>
         <section className="industries greyBg">
             <div className="container">
                 <div className="row">
@@ -72,6 +73,8 @@ const IndustriesSection = () => {
                 </div>
             </div>
         </section>
+        <div className="parallax-03"></div>
+        </>
     );
 };
 

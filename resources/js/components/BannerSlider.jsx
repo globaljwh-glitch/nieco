@@ -24,6 +24,19 @@ const BannerSlider = () => {
   if (!banner) return null;
 
   return (
+    // <section class="mainBanner p-0">
+    //      <div class="bannerSliderHome">
+    //         <div><img src="images/banner/banner-01.jpg" class="imgResponsive" /></div>
+    //         <div><img src="images/banner/banner-02.jpg" class="imgResponsive" /></div>
+    //         <div><img src="images/banner/banner-03.jpg" class="imgResponsive" /></div>
+    //         <div><img src="images/banner/banner-04.jpg" class="imgResponsive" /></div>
+    //         <div><img src="images/banner/banner-05.jpg" class="imgResponsive" /></div>
+    //      </div>
+    //      <div class="bannerContent">
+    //         <h1>Northeast Ingredients Company (NEICO) is the World’s Leading Formulator, Blender, Pre-Mixer,Compounder, Processor, Contract Manufacturer and Packaging Services Provider</h1>
+    //         <p>We Provide Dry Mixes and Liquid Compounds with Customers’ Formulations. Contact us with your commercial needs and technical requirements. We are strictly compliant but easy to deal with. We Will Work on Your Requirements Immediately or with Shortest Possible Lead Time!</p>
+    //      </div>
+    //   </section>
     <section className="mainBanner p-0">
 
       <Slider {...settings}>

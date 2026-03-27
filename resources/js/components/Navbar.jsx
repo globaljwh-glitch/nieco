@@ -52,10 +52,10 @@ const Navbar = () => {
                                 <Link className="nav-link" to="/">Home</Link>
                             </li>
 
-                            {/* <li className="nav-item">
+                            <li className="nav-item">
                                 <Link className="nav-link" to="/about">About</Link>
-                            </li> */}
-                            <li className="nav-item dropdown">
+                            </li>
+                            {/* <li className="nav-item dropdown">
                                 <Link
                                     className="nav-link dropdown-toggle"
                                     to="/about"
@@ -85,7 +85,7 @@ const Navbar = () => {
                                         </Link>
                                     </li>
                                 </ul>
-                            </li>
+                            </li> */}
 
                             {/* Ingredients Dropdown */}
                             <li className="nav-item dropdown">
@@ -96,7 +96,7 @@ const Navbar = () => {
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
-                                    Industries Served
+                                    Industries We Serve
                                 </a>
 
                                 {/* <ul className="dropdown-menu">
@@ -204,7 +204,7 @@ const Navbar = () => {
 
                             <li className="nav-item">
                                 <Link className="nav-link" to="/contact">
-                                    Contact
+                                    Contact Us
                                 </Link>
                             </li>
 

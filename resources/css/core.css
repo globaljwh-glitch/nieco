@@ -106,6 +106,42 @@ strong {
   opacity: 1;
 }
 
+.parallax-01 {
+    background-image: url(../images/240.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 27rem;
+}
+
+.parallax-02 {
+    background-image: url(../images/672.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 27rem;
+}
+
+.parallax-03 {
+    background-image: url(../images/1317.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 27rem;
+}
+/*.parallax-03 {
+    position: relative; 
+}
+
+.parallax-03::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/1317.jpg");
+  opacity: 0.5; 
+  z-index: -1;
+}*/
+
 /*----------------------------- Heading & Buttons ------------------------------------------*/
 h1,
 h2,
@@ -125,21 +161,21 @@ h1 {
 }
 
 h2 {
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 600;
-  padding: 0 0 15px 0;
-  line-height: 51px;
+  padding: 0 0 12px 0;
+  line-height: 48px;
   margin: 0 0 0px 0;
   color: #1533b7;
 }
 
 h3 {
-  font-size: 38px;
+  font-size: 34px;
   line-height: 32px;
   font-weight: 500;
   padding: 0px 0 0px 0;
-  margin: 0 0 15px 0;
-  color: #3a5896;
+  margin: 0 0 18px 0;
+  color: #1533b7;
 }
 
 h4 {
@@ -281,13 +317,13 @@ header {
   width: 100%;
 }
 
-.nav-link {
+.navbar-nav .nav-link {
   color: #0e1b2c;
   font-size: 16px;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
   color: #54a66d;
 }
 
@@ -322,34 +358,32 @@ a.dropdown-item:last-child {
 }
 
 .mainBanner .bannerContent {
-  max-width: 632px;
+  max-width: 520px;
   position: absolute;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 54px 66px;
+  padding: 40px 40px;
   margin: 0px auto;
   text-align: center;
 }
 
 .mainBanner .bannerContent h1 {
-  margin: 15px 0px 5px 0px;
-  font-size: 56px;
-  line-height: 62px;
-  letter-spacing: 1;
-  text-transform: uppercase;
+  margin: 5px 0px 10px 0px;
+  font-size: 26px;
+  line-height: 29px;
   color: #3a3a3a;
   font-family: 'Kepler Std', sans-serif;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .mainBanner .bannerContent p {
   color: #3a3a3a;
   margin: 0px;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 17px;
+  line-height: 26px;
   text-align: center;
   font-weight: 300;
 }
@@ -424,11 +458,11 @@ a.dropdown-item:last-child {
   box-shadow: 4px 4px 25px 0 hsla(0, 0%, 80%, .25);
 }
 
-.imageOverContentBox h2,
+/*.imageOverContentBox h2,
 .ourProductSliderBlock h2 {
-  font-size: 38px;
+  font-size: 34px;
   font-weight: 400;
-}
+}*/
 
 .ourProductSliderBlock {
   margin-top: 70px;
@@ -502,6 +536,14 @@ ul.ourValues {
   box-shadow: 0px 7px 25px 4px rgba(0, 0, 0, 0.08);
   -webkit-box-shadow: 0px 7px 25px 4px rgba(0, 0, 0, 0.08);
   -moz-box-shadow: 0px 7px 25px 4px rgba(0, 0, 0, 0.08);
+}
+
+.infoBlockServicesHome {
+    margin: 20px 0px 15px 0px;
+}
+
+.infoBlockServicesHome .imageThumb{
+  margin-bottom: 20px;
 }
 
 .infoBlockPositionLeft {
@@ -609,7 +651,7 @@ h4.categoriesName {
     content: "";
     width: 30px;
     height: 30px;
-    background: url(/images/down_arrow.png) no-repeat center bottom;
+    background: url(../images/down_arrow.png) no-repeat center bottom;
     bottom: -30px;
     left: 50%;
     position: absolute;
@@ -620,6 +662,42 @@ h4.categoriesName {
   display: none;
 }
 
+.organizationChart img {
+  max-width: 625px;
+}
+
+
+.nav-tabs .nav-link {
+    margin-bottom: -1px;
+    background: none;
+    border: 0px solid transparent;
+    padding: 0px;
+    color: #0e1b2c;
+    border-radius: 3px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background: #efefef;
+    font-size: 15px;
+    line-height: 19px;
+    text-transform: inherit;
+    margin: 1px 5px 0 5px;
+    padding: 12px 18px;
+    white-space: nowrap;
+}
+.nav-tabs .nav-link.active {
+    color: #ffffff;
+    background: #1533b7;
+}
+
+.tabbingSection .tab-content {
+  padding-top: 50px;
+}
+.leftThumb {
+  float: left;
+  max-width: 350px;
+  margin-bottom: 15px;
+  margin-right: 20px;
+}
 /*----------------------------- Contact Page  ------------------------------------------*/
 
 .form-group label span {
@@ -1017,10 +1095,10 @@ footer a {
   }
 
   .navbar-brand {
-    max-width: 195px;
+    max-width: 175px;
   }
 
-  .nav-link {
+  .navbar-nav .nav-link {
     font-size: 14px;
   }
 
@@ -1041,19 +1119,19 @@ footer a {
     line-height: 23px;
   }
 
-  .imageOverContentBox h2,
+  /*.imageOverContentBox h2,
   .ourProductSliderBlock h2 {
-    font-size: 36px;
+    font-size: 34px;
     line-height: 45px;
-  }
+  }*/
 
   h2 {
-    font-size: 39px;
-    line-height: 46px;
+    font-size: 33px;
+    line-height: 42px;
   }
 
   h3 {
-    font-size: 30px;
+    font-size: 28px;
     line-height: 32px;
   }
 
@@ -1122,18 +1200,18 @@ footer a {
     max-height: 600px;
   }
 
-  .mainBanner .bannerContent {
+  /*.mainBanner .bannerContent {
     padding: 45px 50px;
   }
 
   .mainBanner .bannerContent h1 {
     font-size: 48px;
     line-height: 49px;
-  }
+  }*/
 
   .mainBanner .bannerContent p {
     font-size: 16px;
-    line-height: 25px;
+    line-height: 24px;
   }
 
   .slick-arrow {
@@ -1154,6 +1232,14 @@ footer a {
 @media (max-width: 1199.5px) {
   section {
     padding: 70px 0 70px 0;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 13px;
+  }
+
+  .navbar-brand {
+    max-width: 165px;
   }
 
   .dropdown-menu {
@@ -1178,7 +1264,7 @@ footer a {
     max-height: 480px;
   }
 
-  .mainBanner .bannerContent h1 {
+  /*.mainBanner .bannerContent h1 {
     margin: 0px 0px 5px 0px;
     font-size: 48px;
     line-height: 48px;
@@ -1192,7 +1278,7 @@ footer a {
   .mainBanner .bannerContent {
     max-width: 477px;
     padding: 48px 47px;
-  }
+  }*/
 
   body,
   p,
@@ -1216,9 +1302,9 @@ footer a {
     padding: 35px;
   }
 
-  .infoBlockPosition {
+  /*.infoBlockPosition {
     padding: 40px;
-  }
+  }*/
 
   .countryListWedoBussiness li {
     margin: 0 0px;
@@ -1269,8 +1355,8 @@ footer a {
     font-size: 27px;
   }
 
-  .nav-link {
-    font-size: 15px;
+  .navbar-nav .nav-link {
+    font-size: 14px;
     line-height: 16px;
     margin: 10px 10px 10px 10px;
     padding: 0px;
@@ -1304,7 +1390,6 @@ footer a {
     max-height: 400px;
   }
 
-  .bannerContent h1,
   section.innerBanner .bannerContent h1 {
     font-size: 48px;
     line-height: 53px;
@@ -1320,13 +1405,14 @@ footer a {
   }
 
   .mainBanner .bannerContent {
-    max-width: 535px;
-    padding: 35px 35px;
+    max-width: 100%;
+    padding: 20px;
+    width: 70%;
   }
 
   .mainBanner .bannerContent h1 {
-    font-size: 38px;
-    line-height: 39px;
+    font-size: 21px;
+    line-height: 26px;
   }
 
   .mainBanner .bannerContent p {
@@ -1347,9 +1433,13 @@ footer a {
   }
 
   body, p,
-  ul.listing01 li {
+  ul.listing01 li, .infoBlockPosition p {
     font-size: 13px;
     line-height: 23px;
+  }
+
+  .infoBlockPosition {
+      padding: 10px 0px 10px 0px;
   }
 
   p.highlightedText {
@@ -1368,8 +1458,8 @@ footer a {
   }
 
   h2 {
-    font-size: 33px;
-    line-height: 38px;
+    font-size: 30px;
+    line-height: 33px;
   }
 
   h4 {
@@ -1381,11 +1471,11 @@ footer a {
     padding: 30px;
   }
 
-  .imageOverContentBox h2,
+  /*.imageOverContentBox h2,
   .ourProductSliderBlock h2 {
     font-size: 30px;
     line-height: 33px;
-  }
+  }*/
 
   .ourProductSliderBlock,
   hr.underLineRed {
@@ -1446,6 +1536,9 @@ footer a {
   .shadowBlock ul {
     padding-left: 1rem;
   }
+  .tabbingSection .tab-content {
+    padding-top: 30px;
+  }
 }
 
 /*------------------------------------- Max-Width: 767 ----------------------------------*/
@@ -1491,20 +1584,20 @@ footer a {
     width: inherit;
   }
 
-  .bannerContent h1,
   section.innerBanner .bannerContent h1 {
     font-size: 38px;
     line-height: 42px;
   }
 
-  .bannerContent p {
+  /*.bannerContent p {
     font-size: 20px;
     line-height: 24px;
-  }
+  }*/
 
   .mainBanner .bannerContent {
     max-width: 80%;
     width: 100%;
+    padding: 10px 10px;
   }
 
   .mainBanner,
@@ -1661,29 +1754,64 @@ footer a {
     margin-bottom: 15px;
   }
 
-}
+  .parallax-01, .parallax-02, .parallax-03 {
+    height: 10rem;
+  }
 
+  .tabbingSection .tab-content {
+      padding: 0px;
+      box-shadow: none;
+  }
+
+  .tabbingSection .tab-pane {
+    padding-top: 12px;
+    padding-bottom: 5px;
+  }
+  .accordion-header button {
+    color: #ffffff;
+    background-color: #1533b7 !important;
+    border: none;
+  }
+  .visionImage {
+    max-width: 250px;
+    margin: 0px auto;
+  }
+}
+/*------------------------------------- Max-Width: 590 ----------------------------------*/
+@media (max-width: 589.5px) {
+
+  .mainBanner .bannerContent {
+    max-width: 90%;
+    width: 100%;
+    padding: 10px 10px;
+  }
+
+}
 /*------------------------------------- Max-Width: 575 ----------------------------------*/
 @media (max-width: 575.5px) {
 
   .mainBanner .bannerContent {
-    max-width: 87%;
+    max-width: 100%;
+    position: relative;
     width: 100%;
-    padding: 24px 15px;
+    padding: 10px 10px;
+    top: 0px;
+    left: 0px;
+    transform: translate(0%, 0%);
   }
 
-  ul.ourValues {
-    column-count: 1;
+  .mainBanner, .bannerContent {
+    max-height: inherit;
   }
 
-  .mainBanner .bannerContent h1 {
+  /*.mainBanner .bannerContent h1 {
     font-size: 30px;
     line-height: 30px;
-  }
+  }*/
 
   .mainBanner .bannerContent p {
-    font-size: 12px;
-    line-height: 17px;
+    font-size: 14px;
+    line-height: 19px;
   }
 
   .slick-arrow {
@@ -1714,7 +1842,9 @@ footer a {
   .col-lg-2.col-md-3.col-sm-4.d-flex.align-items-center {
       flex: 0 0 50%;
   }
-
+  ul.ourValues {
+    column-count: 1;
+  }
   /*------------------------------------- Responsive Table -------------------------------*/
   table.tableResponsive thead {
     border: none;
@@ -1787,8 +1917,8 @@ footer a {
 @media (max-width: 400px) {
 
   .mainBanner .bannerContent h1 {
-    font-size: 24px;
-    line-height: 23px;
+    font-size: 18px;
+    line-height: 22px;
   }
 
   .mainBanner .bannerContent {
@@ -1797,10 +1927,6 @@ footer a {
     max-width: 88%;
     width: 100%;
   }
-}
-
-.organizationChart img {
-  max-width: 625px;
 }
 
 .searchDropdown {
