@@ -2008,3 +2008,9 @@ footer a {
   opacity: 1 !important;
   color: #fff !important;
 }
+
+.dropdown-menu {
+  max-height: 400px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
