@@ -52,10 +52,10 @@ const Navbar = () => {
                                 <Link className="nav-link" to="/">Home</Link>
                             </li>
 
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link className="nav-link" to="/about">About</Link>
-                            </li>
-                            {/* <li className="nav-item dropdown">
+                            </li> */}
+                            <li className="nav-item dropdown">
                                 <Link
                                     className="nav-link dropdown-toggle"
                                     to="/about"
@@ -65,27 +65,12 @@ const Navbar = () => {
 
                                 <ul className="dropdown-menu">
                                     <li>
-                                        <Link className="dropdown-item" to="/vision">
-                                            Vision & Mission
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link className="dropdown-item" to="/strategies">
-                                            Strategies
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link className="dropdown-item" to="/organization-chart">
-                                            Organization Chart
-                                        </Link>
-                                    </li>
-                                    <li>
                                         <Link className="dropdown-item" to="/code-of-conduct">
                                             Code of Conduct
                                         </Link>
                                     </li>
                                 </ul>
-                            </li> */}
+                            </li>
 
                             {/* Ingredients Dropdown */}
                             <li className="nav-item dropdown">

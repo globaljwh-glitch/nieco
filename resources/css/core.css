@@ -1953,3 +1953,58 @@ footer a {
     display: block;
     margin-top: 0;
 }
+
+/* Remove slick default icons completely */
+.slick-prev:before,
+.slick-next:before {
+  content: none !important;
+}
+
+/* Base arrow button */
+.slick-prev,
+.slick-next {
+  width: 45px;
+  height: 45px;
+  background: rgba(0,0,0,0.6) !important;
+  border-radius: 50%;
+  z-index: 9999;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add custom arrow using ::after (stable) */
+.slick-prev::after,
+.slick-next::after {
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Left arrow */
+.slick-prev::after {
+  content: '←';
+}
+
+/* Right arrow */
+.slick-next::after {
+  content: '→';
+}
+
+/* Hover & focus fix */
+.slick-prev:hover,
+.slick-next:hover,
+.slick-prev:focus,
+.slick-next:focus {
+  background: rgba(0,0,0,0.8) !important;
+  outline: none !important;
+}
+
+/* IMPORTANT: prevent disappearing */
+.slick-prev:hover::after,
+.slick-next:hover::after,
+.slick-prev:focus::after,
+.slick-next:focus::after {
+  opacity: 1 !important;
+  color: #fff !important;
+}
