@@ -26,7 +26,8 @@ const Facility = () => {
          <div class="container">
             <div class="row">
                <div class="col-xl-10 col-lg-11 col-md-12 m-auto text-center">
-                     <p>With a dedicated team of Sourcing at NEICO who follow a rigorous supplier evaluation method before approving the manufacturing site and the products which we offer to customers. Thereby enabling us to offer our customers a wide range of specialty ingredients of consistent quality on a long term supply contract basis. Through our knowledge & network, we also offer strategic services to our customers for sourcing products which are currently not in our offering.</p>
+                     {/* <h3>Facilities & Logistics</h3> */}
+                     <p>We bring the world’s supply of specialty ingredients to your doorstep and service it locally to our customers through our facilities and logistics network.</p>
                      <hr class="underLineRed mt-5" />
                </div>
             </div>

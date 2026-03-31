@@ -45,8 +45,8 @@ const Technical = () => {
                 <div class="container">
                     <div class="row">
                     <div class="col-xl-10 col-lg-11 col-md-12 m-auto text-center">
-                            <h3>Expertise That Supports Performance and Application Success</h3>
-                            <p>Our technical services ensure that products are selected, applied, and integrated effectively within your processes. We combine product expertise, application knowledge, and practical industry understanding to help clients achieve optimal performance, efficiency, and reliability. From evaluation to implementation, our team provides guidance that supports confident decision-making and successful outcomes.</p>
+                            {/* <h3>Technical Services</h3> */}
+                            <p>Through access to low cost manufacturing sites, NEICO is able to offer contract manufacturing services of various products & reactions. This enabling us to add value to our customers in terms of providing products of consistent performance at a competitive rate & manufacturers with utilization of their capacity as well as sourcing of raw materials for them.</p>
                             <hr class="underLineRed mt-5" />
                     </div>
                     </div>

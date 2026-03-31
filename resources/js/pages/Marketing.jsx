@@ -25,9 +25,9 @@ const Marketing = () => {
          <div class="container">
             <div class="row">
                <div class="col-xl-10 col-lg-11 col-md-12 m-auto text-center">
-                     <h3>Driving Growth Through Insight, Positioning, and Market Reach</h3>
-                     <p>With more than three decades of experience and deep market knowledge in specialty ingredients, NEICO offers comprehensive market intelligence and strategic advisory services to support informed business decisions and successful market expansion.</p>
-                     <p>Our team combines industry expertise, global sourcing insight, and on-ground market understanding to deliver reliable research and actionable intelligence tailored to client objectives. We conduct in-depth industry analysis, product and application surveys, competitor benchmarking, and consumer behavior studies to help organizations identify opportunities and mitigate risks.</p>
+                     {/* <h3>Marketing</h3> */}
+                     <p>With more than three decades of experience and market knowledge in specialty ingredients, NEICO has the capability to conduct market intelligence such as industry research, product surveys, competitor studies, consumer research, studies on sales channels, due diligence and investment investigation for a possible strategic market entry.</p>
+                     {/* <p>Our team combines industry expertise, global sourcing insight, and on-ground market understanding to deliver reliable research and actionable intelligence tailored to client objectives. We conduct in-depth industry analysis, product and application surveys, competitor benchmarking, and consumer behavior studies to help organizations identify opportunities and mitigate risks.</p> */}
                      <hr class="underLineRed mt-5" />
                </div>
             </div>

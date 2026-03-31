@@ -25,7 +25,8 @@ const DedicatedCustomerService = () => {
          <div class="container">
             <div class="row">
                <div class="col-xl-10 col-lg-11 col-md-12 m-auto text-center">
-                     <p>NEICO has the ability to offer customers lower priced options to branded equivalents that carry a premium price, without sacrificing any quality or service support. Proper handling, quality, and regulatory compliance of our ingredients is guaranteed to our customers, and is absolutely necessary given the critical nature that these ingredients play in the finished products. Through it’s dedicated sales force for different regions and industry segments, NEICO team is able to offer dedicated customer service in terms of timely response & technical support. We are committed to delivering a customer experience built on responsiveness, expertise, and reliability. Our dedicated service team works closely with every client to understand requirements, provide accurate information, and ensure a smooth journey from initial inquiry to after-sales support. We focus on building long-term relationships through consistent service excellence and proactive communication.</p>
+                     <h3>Sales & Customer Service</h3>
+                     <p>NEICO has the ability to offer customers lower priced options to branded equivalents that carry a premium price, without sacrificing any quality or service support. Proper handling, quality, and regulatory compliance of our ingredients is guaranteed to our customers, and is absolutely necessary given the critical nature that these ingredients play in the finished products. Through it’s dedicated sales force for different regions and industry segments, NEICO team is able to offer dedicated customer service in terms of timely response & technical support.</p>
                      <hr class="underLineRed mt-5" />
                </div>
             </div>
