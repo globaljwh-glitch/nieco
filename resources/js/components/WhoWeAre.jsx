@@ -19,25 +19,18 @@ const WhoWeAre = () => {
 
     return (
         <>
-        <section className="whoWeAre">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-6">
-                        <div className="ps-4 pe-4">
-                            <h2 className="text-center">Welcome to NEICO.COM</h2>
-                            <p dangerouslySetInnerHTML={{ __html: content }} />
-                            <hr className="underLineRed mt-5" />
-                        </div>
-                    </div>
-                    <div className="col-md-6">
-                        <div className="ps-4 pe-4">
-                            <h2 className="text-center">Strategically Located</h2>
-                            <p>We have built long term relationships with strategic partners throughout the world, Our reputation as a “Value Added Partner” with an extensive global supply network and local storage and distribution points throughout the United States to serve our loyal exist accounts and enable us to develop and serve new customers in the markets where we operate.</p>
-                            <hr className="underLineRed mt-5" />
-                        </div>
-                    </div>
-                </div>
+        <section class="whoWeAre">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-10 col-lg-11 col-md-12 m-auto text-center">
+                  <div class="">
+                     <h2 class="text-center">Welcome to NEICO.COM</h2>
+                     <p>Northeast Ingredients Company (NEICO) is the World’s Leading Formulator, Blender, Pre-Mixer, Compounder, Processor, Contract Manufacturer and Packaging Services Provider. We excel in providing the services of dry mixing and liquid compounding of a wide range of high-quality ingredients for customers in the Agricultural, Cosmetics, Fragrance & Personal Care, Food & Beverage, Household & Commercial Cleaning, Industrial Ingredients, Oil & Gas and Pharmaceutical & Fine Ingredients industries; in addition, we have expertise in combinatorial chemistry, controlled reactions, extraction, purification, crystalizing, drying and packaging.</p>
+                     <hr class="underLineRed mt-5" />
+                  </div>
+               </div>
             </div>
+         </div>
         </section>
         <section className="parallax-01"></section>
         </>
