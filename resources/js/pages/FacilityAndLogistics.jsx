@@ -28,8 +28,21 @@ const Facility = () => {
                <div class="col-xl-10 col-lg-11 col-md-12 m-auto text-center">
                      {/* <h3>Facilities & Logistics</h3> */}
                      <p>We bring the world’s supply of specialty ingredients to your doorstep and service it locally to our customers through our facilities and logistics network.</p>
-                     <hr class="underLineRed mt-5" />
+                     <hr class="underLineRed mt-5" style={{ marginBottom: "30px" }} />
                </div>
+
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12 text-center">
+                        {/* <h2>Facilities & Logistics</h2>
+                        <p>We bring the world’s supply of specialty ingredients to your doorstep and service it locally to our customers through our facilities and logistics network.</p> */}
+                        
+                        <img src="images/distribution_map.jpg" alt="" class="imgResponsive" />
+                        
+                     </div>
+                  </div>
+               </div>
+
             </div>
          </div>
       </section>

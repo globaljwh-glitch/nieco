@@ -49,15 +49,16 @@ const ProductSection = () => {
                 {strategic && (
                     <>
                         <StrategicSection />
-                        <hr className="underLineRed" style={{ width: "340px", marginTop: "80px" }} />
+                        {/* <hr className="underLineRed" style={{ width: "340px", marginTop: "80px" }} /> */}
+                        {/* <hr class="underLineRed mt-5" /> */}
                     </>
                 )}
 
                 {/* Dynamic Products */}
-                <div className="ourProductSliderBlock">
+                {/* <div className="ourProductSliderBlock">
                     <div className="row">
 
-                        {/* Featured Products */}
+                        // Featured Products
                         <div className="col-md-6">
                             <h2 className="text-blue">Top Products</h2>
                             <div className="productListSlideOuter">
@@ -71,7 +72,7 @@ const ProductSection = () => {
                             </div>
                         </div>
 
-                        {/* Latest Products */}
+                        // Latest Products
                         <div className="col-md-6">
                             <h2 className="text-blue">New Products</h2>
                             <div className="productListSlideOuter">
@@ -86,7 +87,7 @@ const ProductSection = () => {
                         </div>
 
                     </div>
-                </div>
+                </div> */}
 
             </div>
         </section>

@@ -38,14 +38,14 @@ const Sourcing = () => {
                <div class="col-md-12 text-center">
                   <h2>Who We Are and What We Do</h2>
                   <p class="paddingLR150">Seeking the right partnership for strategic growth.<br />
-                  New Product Introduction - Training Program</p>
+                  New Product Introduction - Training Program With vendor/supplier’s support and participation, NEICO. conducts in house training for Management, Sales, Customer Service and Technical Service Teams</p>
                </div>
             </div>
             <div class="mt-4">
                <div class="row">
                   <div class="col-md-4 d-flex">
                      <div class="houseTraining shadowBlock w-100">
-                     <h4 class="text-green">With vendor/supplier’s support and participation, NEICO. conducts in house training for Management, Sales, Customer Service and Technical Service Teams:</h4>
+                     <h4 class="text-green">Training Program: </h4>
                      <ul class="mb-0">
                         <li>Market Knowledge</li>
                         <li>Basic Chemistry</li>
@@ -86,13 +86,15 @@ const Sourcing = () => {
             <div class="row">
                <div class="col-md-12 text-center">
                   <h2>Our Strength</h2>
-                  <p class="paddingLR150">
-                     Strong brand and established relationship in the global chemical industry at all levels.<br />
-Optimal & well managed internal cost structure enabling us to deliver cost effective solutions to our customers.<br />
-Customized and flexible approach towards offering solutions and services to our customers and suppliers.<br />
-Systematic sourcing procedure for ensuring consistent supply of consistent performance products.<br />
-Qualified, experienced and dedicated technical team for offering technical support for new business development & offering solutions.<br />
-Wide range of specialty ingredients from one source.
+                  <p class="paddingLR150" style={{ textAlign: "left" }} >
+                     <ul class="mb-0">
+                        <li>Strong brand and established relationship in the global chemical industry at all levels.</li>
+                        <li>Optimal & well managed internal cost structure enabling us to deliver cost effective solutions to our customers.</li>
+                        <li>Customized and flexible approach towards offering solutions and services to our customers and suppliers.</li>
+                        <li>Systematic sourcing procedure for ensuring consistent supply of consistent performance products.</li>
+                        <li>Qualified, experienced and dedicated technical team for offering technical support for new business development & offering solutions.</li>
+                        <li>Wide range of specialty ingredients from one source.</li>
+                     </ul>
                   </p>
                </div>
                <div class="col-md-12 text-center">
