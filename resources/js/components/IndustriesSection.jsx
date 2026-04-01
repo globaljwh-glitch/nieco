@@ -61,6 +61,7 @@ const IndustriesSection = () => {
                                                 <h4 className="categoriesName">
                                                     {category.name}
                                                 </h4>
+                                                <h4 class="viewMoreTextBtn">View Products</h4>
                                             </Link>
                                         </div>
                                     </div>

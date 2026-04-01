@@ -64,7 +64,7 @@ $(document).ready(function () {
       $(".nav-tabs").addClass("d-none");
 
       $(".tab-pane").each(function () {
-        if (!$(this).prev().hasClass("accordion-header")) {
+        if (!$(this).prev().hasClass(".tab-content accordion-header")) {
 
           const id = $(this).attr("id");
           const title = $('a[href="#' + id + '"]').text();
@@ -80,7 +80,7 @@ $(document).ready(function () {
       });
 
       // Accordion click
-      $(".accordion-header button").off("click").on("click", function () {
+      $(".tab-content .accordion-header button").off("click").on("click", function () {
         let target = $(this).data("target");
 
         $(".tab-pane").removeClass("show active");
@@ -91,7 +91,7 @@ $(document).ready(function () {
       
       // Back to Tabs
       $(".nav-tabs").removeClass("d-none");
-      $(".accordion-header").remove();
+      $(".tab-content .accordion-header").remove();
 
     }
   }
@@ -100,64 +100,3 @@ $(document).ready(function () {
   $(window).resize(toggleTabsAccordion);
 
 });
-
-/*--------------------------------- Image Click -------------------------*/
-
-$(document).ready(function () {
-
-    function isMobile() {
-      return $(window).width() < 768;
-    }
-
-    function initLayout() {
-      // Reset everything
-      $(".text-box").hide();
-      $(".img-box").removeClass("active");
-
-      // Move all text back to desktop container FIRST
-      $(".text-box").appendTo("#text-container");
-
-      // Set default active
-      $(".img-box").first().addClass("active");
-
-      if (isMobile()) {
-        // Move text below each image
-        $(".img-box").each(function () {
-          var id = $(this).data("id");
-          $("#text-" + id).insertAfter($(this));
-        });
-      }
-
-      // Show first
-      $("#text-1").show();
-    }
-
-    initLayout();
-
-    $(".img-box").click(function () {
-      var id = $(this).data("id");
-
-      if ($(this).hasClass("active")) return;
-
-      $(".img-box").removeClass("active");
-      $(".text-box").slideUp();
-
-      $(this).addClass("active");
-
-      if (isMobile()) {
-        $("#text-" + id).insertAfter($(this)).slideDown();
-      } else {
-        $("#text-" + id).appendTo("#text-container").slideDown();
-      }
-    });
-
-    // Better resize handling (debounce)
-    let resizeTimer;
-    $(window).on("resize", function () {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function () {
-        initLayout();
-      }, 200);
-    });
-
-  });

@@ -611,7 +611,7 @@ ul.ourValues {
   display: block;
 }
 
-h4.categoriesName {
+h4.categoriesName, h4.viewMoreTextBtn {
   position: absolute;
   display: flex;
   font-weight: 600;
@@ -631,16 +631,25 @@ h4.categoriesName {
   padding: 82px 0px;
 
 }
+h4.viewMoreTextBtn, .categoriesList a:hover h4.categoriesName {
+  opacity: 0;
+}
+
+.categoriesList a:hover h4.viewMoreTextBtn {
+  opacity: 1;
+  background-color: rgba(42, 70, 151, 0.55);
+  padding: 32px 0px;
+}
 
 .categoriesList a:hover .imgThumb {
   opacity: 1;
 }
 
-.categoriesList a:hover h4.categoriesName {
+/* .categoriesList a:hover h4.categoriesName {
   background-color: rgba(42, 70, 151, 0.55);
   padding: 32px 0px;
 
-}
+} */
 
 .procedureSteps .shadowBlock {
   position: relative;
@@ -698,6 +707,41 @@ h4.categoriesName {
   margin-bottom: 15px;
   margin-right: 20px;
 }
+
+.feature-img {
+  width: 100%;
+  transition: all 0.4s ease;
+  max-width: 400px;
+}
+
+.feature-img:hover {
+  transform: scale(1.02);
+}
+
+#facilitiesAccordion .accordion-item {
+  border: 0px solid rgba(0, 0, 0, 0.125); 
+}
+
+#facilitiesAccordion .accordion-button {
+  margin-bottom: 0px;
+  padding: 12px 16px 12px 30px;
+  background-color: #f1f2f2 !important;
+  box-shadow: none !important;
+  font-weight: 500;
+  font-size: 18px;
+  color: #212529;
+  font-family: "Poppins", sans-serif;
+}
+
+#facilitiesAccordion .accordion-button:not(.collapsed) {
+   color: #1533b7;
+ }
+
+#facilitiesAccordion .accordion-body {
+  padding: 10px;
+  padding-top: 0px;
+}
+
 /*----------------------------- Contact Page  ------------------------------------------*/
 
 .form-group label span {
@@ -1140,7 +1184,7 @@ footer a {
     line-height: 26px;
   }
 
-  h4.categoriesName {
+  h4.categoriesName, h4.viewMoreTextBtn {
     font-size: 24px;
   }
 
@@ -1452,7 +1496,7 @@ footer a {
     margin-bottom: 15px;
   }
 
-  h4.categoriesName {
+  h4.categoriesName, h4.viewMoreTextBtn {
     font-size: 18px;
     line-height: 20px;
   }
@@ -1539,6 +1583,9 @@ footer a {
   .tabbingSection .tab-content {
     padding-top: 30px;
   }
+  #facilitiesAccordion .accordion-button {
+    font-size: 16px;
+  }
 }
 
 /*------------------------------------- Max-Width: 767 ----------------------------------*/
@@ -1613,9 +1660,9 @@ footer a {
     margin-bottom: 10px;
   }
 
-  /* .imgOverContentThumb {
+  .imgOverContentThumb {
     display: none;
-  } */
+  }
 
   .imageOverContentBox {
     margin-right: 0px;
@@ -1776,6 +1823,10 @@ footer a {
     max-width: 250px;
     margin: 0px auto;
   }
+  #facilitiesAccordion .accordion-button {
+    padding: 12px 16px 12px 20px !important;
+    box-shadow: none !important;
+   }
 }
 /*------------------------------------- Max-Width: 590 ----------------------------------*/
 @media (max-width: 589.5px) {
