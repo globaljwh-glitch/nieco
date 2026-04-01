@@ -59,9 +59,8 @@ const IndustriesSection = () => {
                                                     className="imgResponsive imgThumb"
                                                 />
                                                 <h4 className="categoriesName">
-                                                    {category.name}
+                                                    {category.name} <span>View Our Products</span>
                                                 </h4>
-                                                <h4 class="viewMoreTextBtn">View Products</h4>
                                             </Link>
                                         </div>
                                     </div>

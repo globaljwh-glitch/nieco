@@ -188,7 +188,7 @@ const Contact = () => {
                                             { label: "Phone Number", name: "phone" },
                                             { label: "Company Name", name: "company" }
                                         ].map((field, index) => (
-                                            <div className="form-group mb-3" key={index}>
+                                            <div className="form-group" key={index}>
                                                 <label>{field.label} <span>*</span></label>
                                                 <input
                                                     type="text"
@@ -207,7 +207,7 @@ const Contact = () => {
 
                                         <div className="row">
                                             <div className="col-md-6">
-                                                <div className="form-group mb-3">
+                                                <div className="form-group">
                                                     <label>Street Address <span>*</span></label>
                                                         <input
                                                             type="text"
@@ -220,7 +220,7 @@ const Contact = () => {
                                                 </div>
                                             </div>
                                             <div className="col-md-6">
-                                                <div className="form-group mb-3">
+                                                <div className="form-group">
                                                     <label>City <span>*</span></label>
                                                     <input
                                                         type="text"
@@ -236,7 +236,7 @@ const Contact = () => {
 
                                         <div className="row">
                                             <div className="col-md-4">
-                                                <div className="form-group mb-3">
+                                                <div className="form-group">
                                                     <label>State <span>*</span></label>
                                                     <input
                                                         type="text"
@@ -249,7 +249,7 @@ const Contact = () => {
                                                 </div>
                                             </div>
                                             <div className="col-md-4">
-                                                <div className="form-group mb-3">
+                                                <div className="form-group">
                                                     <label>Zip Code <span>*</span></label>
                                                     <input
                                                         type="text"
@@ -262,7 +262,7 @@ const Contact = () => {
                                                 </div>
                                             </div>
                                             <div className="col-md-4">
-                                                <div className="form-group mb-3">
+                                                <div className="form-group">
                                                     <label>Country <span>*</span></label>
                                                     <input
                                                         type="text"
@@ -276,7 +276,7 @@ const Contact = () => {
                                             </div>
                                         </div>
 
-                                        <div className="form-group mb-3">
+                                        <div className="form-group">
                                             <label>Application and Use of Product <span>*</span></label>
                                             <select
                                                 name="application"
@@ -300,7 +300,7 @@ const Contact = () => {
                                     {/* RIGHT COLUMN */}
                                     <div className="col-md-6">
 
-                                        <div className="form-group mb-3">
+                                        <div className="form-group">
                                             <label>What products are you interested in? <span>*</span></label>
                                             <textarea
                                                 name="interests"
@@ -312,7 +312,7 @@ const Contact = () => {
                                             {errors.interests && <small className="text-danger">{errors.interests}</small>}
                                         </div>
 
-                                        <div className="form-group mb-3">
+                                        <div className="form-group">
                                             <label>Final application? <span>*</span></label>
                                             <textarea
                                                 name="final_app"
@@ -325,24 +325,26 @@ const Contact = () => {
                                         </div>
 
                                     </div>
-                                    <div className="form-group mb-3">
-                                        <ReCAPTCHA
-                                            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                                            onChange={(token) => setCaptchaToken(token)}
-                                        />
-                                        {errors.captcha && (
-                                            <small className="text-danger">{errors.captcha}</small>
-                                        )}
-                                    </div>
-                                    <div className="col-md-12 mt-4 text-end">
-                                        <button
-                                            type="submit"
-                                            disabled={loading}
-                                            className="btn btn-lg customBtn01"
-                                        >
-                                            {loading ? "Submitting..." : "SUBMIT"}
-                                        </button>
-                                    </div>
+                                    
+                                        <div className="col-md-6 form-group">
+                                            <ReCAPTCHA
+                                                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                                                onChange={(token) => setCaptchaToken(token)}
+                                            />
+                                            {errors.captcha && (
+                                                <small className="text-danger">{errors.captcha}</small>
+                                            )}
+                                        </div>
+                                        <div className="col-md-6 text-end">
+                                            <button
+                                                type="submit"
+                                                disabled={loading}
+                                                className="btn btn-lg customBtn01"
+                                            >
+                                                {loading ? "Submitting..." : "SUBMIT"}
+                                            </button>
+                                        </div>
+                                    
                                 </div>
                                 </form>
                             </div>

@@ -252,7 +252,7 @@ const JobDetail = () => {
                                     {errors.resume && <small className="text-danger">{errors.resume}</small>}
                               </div>
                            </div>
-                           <div className="form-group mb-3">
+                           <div className="col-md-6 form-group">
                                 <ReCAPTCHA
                                     ref={recaptchaRef}
                                     sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
@@ -260,7 +260,7 @@ const JobDetail = () => {
                                     />
                                     {errors.captcha && <small className="text-danger">{errors.captcha}</small>}
                             </div>
-                           <div className="col-md-12">
+                           <div className="col-md-6">
                               <div className="form-group">
                                  <div className="text-end">
                                     <button

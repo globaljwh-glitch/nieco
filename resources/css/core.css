@@ -611,45 +611,41 @@ ul.ourValues {
   display: block;
 }
 
-h4.categoriesName, h4.viewMoreTextBtn {
+h4.categoriesName {
   position: absolute;
-  display: flex;
+  /* display: flex; */
   font-weight: 600;
   font-size: 27px;
   width: 100%;
   max-width: 310px;
   text-transform: uppercase;
   color: rgb(255, 255, 255) !important;
-  display: flex;
   justify-content: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(42, 70, 151, 0);
   transition: background-color 0.4s ease, padding 0.45s ease, letter-spacing 0.45s ease;
-  ;
   padding: 82px 0px;
 
-}
-h4.viewMoreTextBtn, .categoriesList a:hover h4.categoriesName {
-  opacity: 0;
-}
-
-.categoriesList a:hover h4.viewMoreTextBtn {
-  opacity: 1;
-  background-color: rgba(42, 70, 151, 0.55);
-  padding: 32px 0px;
 }
 
 .categoriesList a:hover .imgThumb {
   opacity: 1;
 }
 
-/* .categoriesList a:hover h4.categoriesName {
+.categoriesList a:hover h4.categoriesName {
   background-color: rgba(42, 70, 151, 0.55);
   padding: 32px 0px;
 
-} */
+}
+
+h4.categoriesName span {
+  display: block;
+  font-size: 16px;
+  text-transform: capitalize;
+  text-decoration: underline;
+}
 
 .procedureSteps .shadowBlock {
   position: relative;
@@ -2082,4 +2078,22 @@ footer a {
   -webkit-box-shadow: 4px 4px 10px 0 hsla(0, 0%, 80%, .8);
   -moz-box-shadow: 4px 4px 10px 0 hsla(0, 0%, 80%, .8);
   box-shadow: 4px 4px 10px 0 hsla(0, 0%, 80%, .8);      
+}
+
+#facilitiesAccordion .accordion-button:after {
+    background-image: none;
+    content: "";
+    width: 14px;
+    height: 14px;
+    border-right: 3px solid #000;
+    border-bottom: 3px solid #000;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+ 
+#facilitiesAccordion .accordion-button:not(.collapsed)::after {
+    border-right: 3px solid #1533b7;
+    border-bottom: 3px solid #1533b7;
+    transform: rotate(-135deg);
+    transition: transform 0.3s ease;
 }
