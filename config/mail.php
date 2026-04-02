@@ -54,9 +54,26 @@ return [
 //             ],
 // ],
 //         ],
+        // 'smtp' => [
+        //     'transport' => 'smtp',
+        //     'scheme' => null,
+        //     'host' => env('MAIL_HOST'),
+        //     'port' => env('MAIL_PORT'),
+        //     'username' => env('MAIL_USERNAME'),
+        //     'password' => env('MAIL_PASSWORD'),
+        //     'timeout' => null,
+        //     'local_domain' => env('MAIL_EHLO_DOMAIN'),
+        //     'stream' => [
+        //         'ssl' => [
+        //             'verify_peer' => false,
+        //             'verify_peer_name' => false,
+        //             'allow_self_signed' => true,
+        //         ],
+        //     ],
+        // ],
         'smtp' => [
             'transport' => 'smtp',
-            'scheme' => null,
+            'scheme' => env('MAIL_SCHEME', 'smtp'), // ✅ force plain SMTP
             'host' => env('MAIL_HOST'),
             'port' => env('MAIL_PORT'),
             'username' => env('MAIL_USERNAME'),
