@@ -11,6 +11,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        $middleware->append(\Illuminate\Foundation\Http\Middleware\HandleCors::class);
         $middleware->validateCsrfTokens(except: [
             'api/contact-submit',
             'jobs/*/apply',
