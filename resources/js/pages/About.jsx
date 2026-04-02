@@ -159,7 +159,7 @@ const About = () => {
         <div className="container">
           <div class="row">
             <div class="col-lg-12">
-                <div><h4 class="text-blue">About NEICO</h4>
+                <div><h4 class="text-blue">About Us</h4>
                 <p>NEICO is America’s leading custom blender, pre-mixer and provider of various contract manufacturing/processing and packaging services. We excel in providing the services of dry mixing and liquid compounding of a wide range of high-quality ingredients for customers in the Agricultural, Cosmetics, Fragrance & Personal Care, Food & Beverage, Household & Commercial Cleaning, Industrial Ingredients, Oil & Gas and Pharmaceutical & Fine Ingredients industries; in addition, we have expertise in combinatorial chemistry, controlled reactions, extraction, purification, crystalizing, drying and packaging.</p>
                 <p>NEICO is a reputable specialty ingredients company with its global headquarters in the United States. We add value to our products and services through our global capabilities in sourcing, marketing, sales, technical services, transportation, warehousing and distribution backed by our supply chain partners worldwide.</p>
                 <p><strong>Services for NEICO Global Suppliers</strong> – NEICO excels in supporting market penetration into various industries on behalf of our suppliers through our dedicated sales and marketing teams.</p></div>
