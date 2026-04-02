@@ -48,9 +48,7 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul className="navbar-nav ms-auto">
 
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/">Home</Link>
-                            </li>
+                            
 
                             {/* <li className="nav-item">
                                 <Link className="nav-link" to="/about">About</Link>
@@ -216,6 +214,10 @@ const Navbar = () => {
                                 <Link className="nav-link" to="/contact">
                                     Contact Us
                                 </Link>
+                            </li>
+
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/">Home</Link>
                             </li>
 
                         </ul>
