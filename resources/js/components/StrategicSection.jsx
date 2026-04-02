@@ -24,7 +24,7 @@ const StrategicSection = () => {
                 <div className="row">
                     <div class="col-xl-10 col-lg-11 col-md-12 m-auto text-center">
                         <div class="mb-2 pb-2">
-                            <h2 class="text-center">Strategically Located</h2>
+                            <h2 class="text-center">Three Modern Manufacturing Facilities</h2>
                             <p>We have built long term relationships with strategic partners throughout the world, Our reputation as a “Value Added Partner” with an extensive global supply network and local storage and distribution points throughout the United States to serve our loyal exist accounts and enable us to develop and serve new customers in the markets where we operate.</p>
                             <hr class="underLineRed mt-5" style={{ marginBottom: "30px" }} />
                             {/* <hr className="underLineRed" style={{ width: "340px", marginTop: "80px" }} /> */}

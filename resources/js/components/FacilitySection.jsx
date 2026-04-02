@@ -57,7 +57,7 @@ const FacilitySection = () => {
          <div class="container">
             <div class="row ">
                <div class="col-md-12 text-center">
-                  <h2 class="text-uppercase mb-5">Our Facilities</h2>
+                  <h2 class="text-uppercase mb-5">Highest Quality and Cutting Edge Technolgies</h2>
                </div>
             </div>
             <div class="row align-items-center">
