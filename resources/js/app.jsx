@@ -22,6 +22,7 @@ import About from "./pages/About";
 import CodeOfConduct from "./pages/CodeOfConduct";
 import Marketing from "./pages/Marketing";
 import OrganizationChart from "./pages/OrganizationChart";
+import Values from "./pages/Values";
 import Vision from "./pages/Vision";
 import DedicatedCustomerService from "./pages/DedicatedCustomerService";
 import FacilityAndLogistics from "./pages/FacilityAndLogistics";
@@ -45,6 +46,7 @@ ReactDOM.createRoot(document.getElementById("app")).render(
                 <Route path="/code-of-conduct" element={<CodeOfConduct />} />
                 <Route path="/marketing" element={<Marketing />} />
                 <Route path="/organization-chart" element={<OrganizationChart />} />
+                <Route path="/values" element={<Values />} />
                 <Route path="/vision" element={<Vision />} />
                 <Route path="/dedicated-customer-service" element={<DedicatedCustomerService />} />
                 <Route path="/facility-and-logistics" element={<FacilityAndLogistics />} />
