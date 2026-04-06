@@ -82,6 +82,9 @@ const JobDetail = () => {
         // const response = await axios.post(`/jobs/${id}/apply`, data, {
         //     headers: { "Content-Type": "multipart/form-data" }
         // });
+        for (let pair of data.entries()) {
+  console.log(pair[0], pair[1]);
+}
         const response = await axios.post(`/jobs/${id}/apply`, data);
 
         setServerMessage(response.data.message || "Application submitted successfully");
