@@ -17,12 +17,13 @@ class CareerController extends Controller
      */
     public function apply(Request $request, $id)
     {
+        dd($request->file('resume'));
         $request->validate([
             'name' => 'required',
             'phone' => 'required',
             'email' => 'required|email',
             'subject' => 'required',
-            'resume' => 'required|mimes:pdf,doc,docx|max:2048',
+            'resume' => 'required|mimes:pdf,doc,docx|max:10240',
             'captcha' => 'required'
         ]);
 
