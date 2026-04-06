@@ -17,6 +17,7 @@ class CareerController extends Controller
      */
     public function apply(Request $request, $id)
     {
+        dd($request);
         //dd($request->file('resume'));
         //return response()->json(['data' => [$request->all(), $request->file('resume')], 'message' => 'Application submitted successfully']);
         $request->validate([
@@ -57,8 +58,14 @@ class CareerController extends Controller
             ], 422);
         }
 
+        $file = $request->file('resume');
         // Store resume temporarily
-        $path = $request->file('resume')->store('public/temp_resumes');
+        $path = $file->store('temp_resumes', 'public');
+            
+        // Full path for storage
+        $fullPath = Storage::disk('public')->path($path);
+        
+        //$path = $request->file('resume')->store('public/temp_resumes');
 
         $data = [
             'job_id' => $id,
@@ -66,7 +73,8 @@ class CareerController extends Controller
             'phone' => $request->phone,
             'email' => $request->email,
             'subject' => $request->subject,
-            'resume_path' => storage_path('app/' . $path),
+            //'resume_path' => storage_path('app/' . $path),
+            'resume_path' => $fullPath
         ];
 
         // Send mail to admin
