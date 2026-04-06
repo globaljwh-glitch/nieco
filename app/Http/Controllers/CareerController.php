@@ -17,7 +17,7 @@ class CareerController extends Controller
      */
     public function apply(Request $request, $id)
     {
-        dd($request);
+        //dd($request);
         //dd($request->file('resume'));
         //return response()->json(['data' => [$request->all(), $request->file('resume')], 'message' => 'Application submitted successfully']);
         $request->validate([
