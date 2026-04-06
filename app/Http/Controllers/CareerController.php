@@ -29,19 +29,6 @@ class CareerController extends Controller
             'captcha' => 'required'
         ]);
 
-        // Verify reCAPTCHA
-        // $captcha = Http::asForm()->post(
-        //     'https://www.google.com/recaptcha/api/siteverify',
-        //     [
-        //         'secret' => config('services.recaptcha.secret'),
-        //         'response' => $request->captcha,
-        //     ]
-        // );
-
-        // if (!$captcha->json('success')) {
-        //     return response()->json(['message' => 'Captcha failed'], 422);
-        // }
-
         $captcha = Http::asForm()->post(
             'https://www.google.com/recaptcha/api/siteverify',
             [
