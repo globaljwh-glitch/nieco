@@ -35,12 +35,12 @@ if (!$socket) {
 }
  
 // Start SMTP conversation
-echo getResponse($socket);
+//echo getResponse($socket);
  
-sendCommand($socket, "HELO localhost");
-sendCommand($socket, "MAIL FROM:<$from>");
-sendCommand($socket, "RCPT TO:<$to>");
-sendCommand($socket, "DATA");
+$this->sendCommand($socket, "HELO localhost");
+$this->sendCommand($socket, "MAIL FROM:<$from>");
+$this->sendCommand($socket, "RCPT TO:<$to>");
+$this->sendCommand($socket, "DATA");
  
 // Email headers + body
 $data = "Subject: $subject\r\n";
@@ -48,9 +48,9 @@ $data .= "From: $from\r\n";
 $data .= "To: $to\r\n";
 $data .= "\r\n$message\r\n.";
  
-sendCommand($socket, $data);
+$this->sendCommand($socket, $data);
  
-sendCommand($socket, "QUIT");
+$this->sendCommand($socket, "QUIT");
  
 fclose($socket);
  
@@ -96,7 +96,7 @@ public function getResponse($socket) {
 public function sendCommand($socket, $command) {
     echo ">> $command\n";
     fputs($socket, $command . "\r\n");
-    $response = getResponse($socket);
+    $response = $this->getResponse($socket);
     echo "<< $response\n";
     return $response;
 }
