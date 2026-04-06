@@ -72,37 +72,17 @@ const JobDetail = () => {
     data.append("phone", formData.phone);
     data.append("email", formData.email);
     data.append("subject", formData.subject);
-    data.append("resume", formData.resume);
+    if (formData.resume) {
+      data.append("resume", formData.resume);
+    }
+    //data.append("resume", formData.resume);
     data.append("captcha", captchaToken);
 
-    // try {
-    //   await axios.post(`/jobs/${id}/apply`, data, {
-    //     headers: { "Content-Type": "multipart/form-data" }
-    //   });
-
-    //   alert("Application submitted successfully");
-
-    //   setFormData({
-    //     name: "",
-    //     phone: "",
-    //     email: "",
-    //     subject: "",
-    //     resume: null,
-    //   });
-
-    //   recaptchaRef.current.reset();
-    //   setCaptchaToken(null);
-    //   setErrors({});
-
-    // } catch (error) {
-    //   console.error(error);
-    //   alert("Something went wrong");
-    // }
-
     try {
-        const response = await axios.post(`/jobs/${id}/apply`, data, {
-            headers: { "Content-Type": "multipart/form-data" }
-        });
+        // const response = await axios.post(`/jobs/${id}/apply`, data, {
+        //     headers: { "Content-Type": "multipart/form-data" }
+        // });
+        const response = await axios.post(`/jobs/${id}/apply`, data);
 
         setServerMessage(response.data.message || "Application submitted successfully");
         setServerError(null);
@@ -186,7 +166,7 @@ const JobDetail = () => {
                                 {serverError}
                             </div>
                         )}
-                        <form onSubmit={handleSubmit} className="mt-4">
+                        <form onSubmit={handleSubmit} className="mt-4" encType="multipart/form-data">
                         <div className="row">
                            <div className="col-md-6">
                               <div className="form-group">
