@@ -21,7 +21,7 @@ class ContactController extends Controller
 $port = 25;
  
 $from = "test@unitedfoodscorp.com";
-$to = "ramankantmca@gmail.com"; // change this
+$to = "ramankant.vashisht@jwhglobal.com"; // change this
 $subject = "SMTP Test Mail";
 $message = "This is a test email sent using raw SMTP in PHP.";
  
