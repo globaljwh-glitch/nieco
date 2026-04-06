@@ -15,7 +15,7 @@ const PartnerSlider = () => {
     const settings = {
         dots: false,
         infinite: true,
-        speed: 400,
+        speed: 1600,
         autoplay: true,
         slidesToShow: 6,
         slidesToScroll: 1,
