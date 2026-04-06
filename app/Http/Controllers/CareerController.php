@@ -56,7 +56,7 @@ class CareerController extends Controller
         }
 
         // Store resume temporarily
-        $path = $request->file('resume')->store('private/temp_resumes');
+        $path = $request->file('resume')->store('public/temp_resumes');
 
         $data = [
             'job_id' => $id,
