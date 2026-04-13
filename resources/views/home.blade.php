@@ -10,7 +10,7 @@
 
     <!-- Line 1: Favicon -->
     <!-- <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"> -->
-    <!-- <link rel="icon" href="{{ asset('favicon.ico') }}"> -->
+    <link rel="icon" href="{{ asset('images/favicon.ico') }}">
     
     <!-- Line 2: Dynamic Title -->
     <!-- <title>@yield('title', config('app.name'))</title> -->
