@@ -1,5 +1,8 @@
 <?php
-
+if ($_SERVER['HTTP_HOST'] === 'www.neico.com') {
+    header("Location: https://neico.com" . $_SERVER['REQUEST_URI'], true, 301);
+    exit();
+}
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
