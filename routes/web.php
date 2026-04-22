@@ -33,7 +33,8 @@ Route::get('/front/industries', [HomeSectionController::class, 'frontIndustries'
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('careers', CareerController::class);
-    Route::resource('products', ProductController::class);
+    //Route::resource('products', ProductController::class);
+    Route::resource('products', ProductController::class)->except(['show']);
     Route::resource('categories', CategoryController::class)->except(['show']);
     Route::resource('home-sections', HomeSectionController::class)
         ->except(['show', 'destroy']);
