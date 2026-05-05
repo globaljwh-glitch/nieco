@@ -15,6 +15,14 @@
     <!-- Line 2: Dynamic Title -->
     <!-- <title>@yield('title', config('app.name'))</title> -->
     <title>Your Partner in Advanced Ingredient Solutions</title>
+
+<meta property="og:title" content="NEICO" />
+<meta property="og:description" content="Your Partner in Advanced Ingredient Solutions" />
+<meta property="og:image" content="https://neico.com/images/neico_logo.png" />
+<meta property="og:type" content="website" />
+
+<meta property="og:site_name" content="NEICO" />
+<meta name="twitter:card" content="Your Partner in Advanced Ingredient Solutions" />
 </head>
 <body>
     <div id="app"></div>
